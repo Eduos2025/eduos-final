@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #34A512;
+  --white: #ffffff;
+  --black: #000000;
+  --color1: #f1f2f6;
+  --accent-red: #A51234;         /* Complementary red */
+  --light-green: #78D43A;        /* Light green */
+  --dark-teal: #128A5A;          /* Dark green-teal */
+  --neutral-white: #F9F9F9;      /* Soft white for background */
+  --neutral-gray: #B3B3B3;       /* Light gray for borders */
+  --neutral-black: #333333;      /* Dark gray for text */
+  --secondary-color: #FB8303;
+  --light-bg: #F6F9FF;
+  --heading-family: "DM Sans", serif;
+  --main-family: "Montserrat", serif;
+}
+body{
+  font-family: "Montserrat", serif;
+}
+.other{
+  font-family: "DM Sans", serif;
+}
+.no-scroll {
+	overflow: hidden;
+}
