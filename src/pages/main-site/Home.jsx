@@ -1,9 +1,4 @@
 import Header from "../../components/main-site/Header";
-import "../../css/home.css";
-// import { motion } from "framer-motion";
-// import { FadeIn } from "../../variants";
-// import useScrollDirection from "../../components/useScrollDirection ";
-// import ScrollToTop from "../../components/ScrollToTop";
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import { useEffect } from "react";

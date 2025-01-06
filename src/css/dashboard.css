@@ -1,0 +1,611 @@
+body {
+	--bg-header: rgba(255, 255, 255, 0.7);
+	--bg-rounded-svg: rgb(230, 227, 227) !important;
+	--rounded-svg-colour: green !important;
+	--bg-searchbox: #f0f5ff;
+	--mix-color: #292929;
+	--light-green: #78d43a;
+	--darkText: #000;
+	--lightText: #fff;
+	--primary-color: #34a512;
+	--hover-color: #f6f9ff;
+	--sub-menu-bg: rgba(0, 0, 0, 0.2);
+	--sub-menu-color: #5e5d72;
+	--dark-teal: #128a5a;
+	--secondary-color: #fb8303;
+	--main-bg: #ebe9e9;
+	--hd-color: #403e57;
+	--border-col: rgba(255, 255, 255, 1);
+	--bg-sidebar: rgba(255, 255, 255, 1);
+	  --charcoal: #333333;
+	    --primary-light: #4CBA26;
+
+	 /* Primary Colors */
+  --primary-color: #34A512;
+  --primary-hover: #2C9010;
+
+
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --off-white: #F7F7F7;
+  --light-gray: #E0E0E0;
+  --medium-gray: #B0B0B0;
+  --dark-gray: #424242;
+
+
+  /* Accent Colors */
+  --accent-color: #FF6F61;
+}
+
+body.dark {
+	--bg-header: #112143 !important;
+	--bg-sidebar: #112143 !important;
+	--bg-rounded-svg: #112755 !important;
+	--rounded-svg-colour: #fff !important;
+	--bg-searchbox: #12254e;
+	--mix-color: #fff;
+	--darkText: #fff;
+	--lightText: #000;
+	--hover-color: rgba(225, 225, 225, 0.1);
+	--sub-menu-bg: rgba(225, 225, 225, 0.2);
+	--sub-menu-color: rgba(225, 225, 225, 0.8);
+	--main-bg: #071739;
+	--hd-color: rgba(225, 225, 225, 0.95);
+	--border-col: rgba(255, 255, 255, 0.1);
+	--dark-gray: #F7F7F7;
+}
+::-webkit-scrollbar {
+	width: 3px; /* Width of the vertical scrollbar */
+	height: 3px; /* Height of the horizontal scrollbar */
+}
+::-webkit-scrollbar-track {
+	background: #f4f4f4; /* Background of the track */
+	border-radius: 10px; /* Rounded edges for the track */
+}
+::-webkit-scrollbar-thumb {
+	background: #34a512; /* Color of the scroll thumb */
+	border-radius: 10px; /* Rounded edges for the thumb */
+}
+::-webkit-scrollbar-thumb:hover {
+	background: lightblue; /* Darker color when hovering */
+}
+.dashboard {
+	overflow-x: hidden;
+	background-color: var(--main-bg);
+	min-height: 100vh;
+}
+.dashboard header {
+	width: 100%;
+	height: 80px;
+	background-color: var(--bg-header);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	margin: 0px;
+	padding: 0px;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	z-index: 1000;
+	/* border-bottom: 1px solid var(--darkText); */
+}
+.dashboard header .logo {
+	width: 70%;
+}
+.dashboard .row {
+	margin: 0px !important;
+}
+.dashboard {
+	margin: 0px;
+	padding: 0px;
+}
+.dashboard header button.rounded-circle {
+	min-width: 40px !important;
+	width: 40px !important;
+	height: 40px !important;
+	background-color: var(--bg-rounded-svg);
+	color: var(--rounded-svg-colour);
+	margin-right: 1rem;
+}
+
+.dashboard header button.rounded-circle svg {
+	color: var(--rounded-svg-colour);
+	font-size: 18px !important;
+	transition: all 0.3s ease-in-out;
+}
+.dashboard header button.rounded-circle:hover svg {
+	color: #0858 !important;
+}
+.searchBox {
+	width: 400px;
+	height: 40px;
+	background-color: var(--bg-searchbox);
+	border-radius: 6px;
+	padding: 3px 15px;
+}
+.searchBox input {
+	background: transparent;
+	border: 0px;
+	outline: none;
+	padding-left: 5px;
+	font-size: 14px;
+	color: var(--mix-color);
+}
+.searchBox input::-webkit-input-placeholder {
+	color: var(--mix-color);
+}
+.searchBox svg {
+	margin-right: 0.5rem;
+	font-size: 18px;
+	color: var(--mix-color);
+}
+.myAcc {
+	text-align: left !important;
+	color: #000 !important;
+	text-transform: capitalize !important;
+}
+.myAcc .userImg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	width: 43px;
+	height: 43px;
+	border: 1px solid var(--light-green);
+	padding: 2px;
+	border-radius: 100%;
+}
+.myAcc .userImg .rounded-circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	position: relative;
+}
+.myAcc .userImg .rounded-circle img {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+}
+.myAcc .userInfo {
+	padding-left: 10px;
+}
+.myAcc .userInfo h4 {
+	font-weight: 600;
+	font-size: 14px;
+	margin-bottom: 0px;
+	color: var(--mix-color);
+}
+.myAcc .userInfo p {
+	font-weight: 500;
+	font-size: 12px;
+	color: var(--darkText);
+	opacity: 0.7;
+	margin-top: 0px;
+}
+#account-menu li {
+	font-size: 14px !important;
+	padding: 12px 15px !important;
+}
+#account-menu li svg {
+	font-size: 14px !important;
+}
+#notifications .MuiPaper-elevation {
+	right: 15% !important;
+	width: 300px !important;
+	left: auto !important;
+	top: 70px !important;
+}
+.MuiPaper-elevation {
+	background-color: var(--bg-searchbox) !important;
+}
+.MuiPaper-elevation::before {
+	background-color: var(--bg-searchbox) !important;
+}
+.MuiPaper-elevation li *,
+.MuiPaper-elevation li {
+	color: var(--darkText) !important;
+}
+
+.main .sidebarWrapper {
+	width: 20%;
+	flex: 0 0 20%;
+	transition: all 0.3s ease-in-out;
+}
+.main .sidebarWrapper.toggle {
+	width: 0%;
+	flex: 0 0 0%;
+}
+.main .sidebarWrapper .sidebar {
+	width: 20%;
+	height: calc(100vh - 80px);
+	max-width: calc(100% - 70px);
+	position: fixed;
+	top: 80px;
+	left: 0;
+	background: var(--bg-sidebar) !important;
+	transition: all 0.3s ease-in-out;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-bottom: 40px !important;
+	transition: all 0.3s ease-in-out;
+}
+.main .sidebarWrapper.toggle .sidebar {
+	left: -100%;
+}
+.main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb {
+	background: transparent !important;
+}
+.main .sidebarWrapper:hover .sidebar::-webkit-scrollbar-thumb {
+	background: var(--primary-color) !important;
+}
+
+.main .sidebarWrapper .sidebar ul {
+	margin-bottom: 0px;
+	padding-left: 0 !important;
+	padding: 10px !important;
+}
+.main .sidebarWrapper .sidebar ul li {
+	list-style: none;
+}
+.main .sidebarWrapper .sidebar ul li button {
+	color: var(--darkText) !important;
+	text-transform: capitalize !important;
+	font-weight: 600;
+	text-align: left;
+	padding: 12px 15px !important;
+	justify-content: left;
+	border-radius: 10px !important;
+	align-items: center;
+	font-size: 15px !important;
+}
+.main .sidebarWrapper .sidebar ul li button .icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+}
+.main .sidebarWrapper .sidebar ul li button .icon svg {
+	font-size: 22px;
+}
+.main .sidebarWrapper .sidebar ul li button * {
+	color: var(--dark-gray) !important;
+}
+.main .sidebarWrapper .sidebar ul li button .arrow {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+	transition: all 0.3s ease-in-out;
+}
+.main .sidebarWrapper .sidebar ul li button:hover {
+	background: var(--hover-color) !important;
+
+}
+.main .sidebarWrapper .sidebar ul li button.active {
+		color: var( --primary-light) !important;
+}
+.main .sidebarWrapper .sidebar ul li button.active * {
+		color: var( --primary-light) !important;
+}
+.main .sidebarWrapper .sidebar ul li button.active .arrow {
+	transform: rotate(90deg);
+}
+.main .sidebarWrapper .sidebar ul .submenu {
+	padding: 0 45px !important;
+	position: relative;
+	transition: all 0.3s;
+	height: 0px;
+}
+.main .sidebarWrapper .sidebar ul .submenu::before {
+	content: "";
+	width: 1px !important;
+	height: 95%;
+	position: absolute;
+	top: 0;
+	left: 25px;
+	background: var(--sub-menu-bg);
+}
+.main .sidebarWrapper .sidebar ul .submenu li {
+	width: 100%;
+	list-style: none;
+	/* border-left: 1px solid #333;
+	padding-left: 25px !important; */
+}
+.main .sidebarWrapper .sidebar ul .submenu li a {
+	text-decoration: none;
+	color: var(--sub-menu-color) !important;
+	display: block;
+	padding: 6px 0;
+	font-size: 13px;
+	font-weight: 500;
+	transition: all 0.3s ease-in-out;
+}
+.main .sidebarWrapper .sidebar ul .submenu li a:hover {
+	color: var(--primary-color) !important;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper {
+	transition: all 0.4s;
+	height: 0px;
+	overflow: hidden;
+}
+/* .main .sidebarWrapper .sidebar ul .submenuWrapper.collapsed{
+	height: 0px;
+} */
+.main .sidebarWrapper .sidebar ul .submenuWrapper.collapsed .submenu {
+	opacity: 0;
+}
+
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapse {
+	height: auto;
+	overflow: inherit;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapse .submenu {
+	opacity: 1;
+	height: auto;
+}
+
+.logoutWrapper {
+	padding: 0px 25px;
+	margin-top: 2rem;
+}
+.logoutWrapper .LogoutBox::before {
+	content: "";
+	width: 70px;
+	height: 70px;
+	background: var(--dark-teal);
+	border-radius: 100%;
+	position: absolute;
+	right: -5px;
+	top: -20px;
+	opacity: 0.5;
+}
+.logoutWrapper .LogoutBox::after {
+	content: "";
+	width: 30px;
+	height: 30px;
+	background: var(--dark-teal);
+	border-radius: 100%;
+	position: absolute;
+	left: 20px;
+	top: 15px;
+	opacity: 0.5;
+}
+.logoutWrapper .LogoutBox {
+	width: 100%;
+	height: 130px;
+	padding: 25px;
+	background: #c1fa9bda;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.logoutWrapper .LogoutBox button {
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	background: var(--secondary-color);
+}
+.logoutWrapper .LogoutBox button svg {
+	margin-right: 10px;
+}
+.main .content {
+	width: 80%;
+	flex: 0 0 80%;
+	transition: all 0.3s ease-in-out;
+}
+.main .content.toggle {
+	width: 100%;
+	flex: 0 0 100%;
+}
+.right-content {
+	padding: 90px 30px;
+	padding-bottom: 0px;
+}
+.dashboardBoxWrapper {
+	gap: 15px;
+	width: 100%;
+	flex-wrap: wrap;
+	display: flex;
+}
+.dashboardBoxWrapper .dashboardBox {
+	width: 48.5%;
+	height: 170px;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: left !important;
+	text-transform: capitalize;
+}
+.dashboardBoxWrapper .dashboardBox .col1 h4 {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+.dashboardBoxWrapper .dashboardBox .col1 span {
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 45px;
+}
+.dashboardBoxWrapper .dashboardBox .ml-auto {
+	margin-left: auto !important;
+}
+.dashboardBoxWrapper .dashboardBox .toggleIcon {
+	font-size: 22px;
+	color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	min-width: 40px !important;
+	width: 40px !important;
+	height: 40px !important;
+	border-radius: 50%;
+}
+.dashboardBoxWrapper .dashboardBox .icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	background-image: linear-gradient(
+		to bottom right,
+		rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.2)
+	);
+}
+.dashboardBoxWrapper .dashboardBox .icon svg {
+	font-size: 36px;
+	opacity: 0.4;
+	color: #fff;
+}
+.dashboardBoxWrapper .dashboardBox .chart {
+	opacity: 0.05;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+.dashboardBoxWrapper .dashboardBox .chart svg {
+	font-size: 110px;
+	color: #000;
+}
+.dashboardBoxWrapper .dashboardBox .bottomEle {
+	position: relative;
+	top: 20px;
+}
+/* .dashboardBoxWrapper .dashboardBox .MuiList-root svg{
+	color: #000 !important; font-size: 17px !important; margin-right: 10px !important;
+} */
+.dropdown_menu .MuiButtonBase-root svg {
+	margin-right: 10px !important;
+}
+.dashboardBoxWrapperRow .box {
+	width: 100%;
+	height: 100%;
+}
+.graphBox {
+	background-image: linear-gradient(#1747a1, #316feb);
+	border-radius: 10px;
+	padding: 25px;
+	color: #fff;
+}
+
+.graphBox .toggleIcon {
+	border-radius: 100%;
+	min-width: 40px !important;
+	width: 40px !important;
+	height: 40px !important;
+}
+.graphBox .toggleIcon svg {
+	color: #fff !important;
+	opacity: 1 !important;
+	font-size: 22px;
+}
+.boxEle {
+	padding-left: 0% !important;
+	padding-right: 0% !important;
+}
+.graphBox h3 {
+	font-size: 24px;
+	font-weight: 600;
+	margin: 10px 0 !important;
+	color: #fff !important;
+}
+.graphBox p {
+	font-size: 13px;
+	color: #fff !important;
+	opacity: 0.7;
+}
+.card {
+	margin: 20px 0px;
+	border-radius: 10px;
+	background-color: var(--bg-header) !important;
+}
+.card .hd {
+	font-size: 18px;
+	font-weight: bold;
+	color: var(--hd-color);
+}
+.dashboard h1,
+.dashboard h2,
+.dashboard h3,
+.dashboard h4,
+.dashboard h5,
+.dashboard h6,
+.dashboard p {
+	color: var(--hd-color);
+}
+
+.table .thead-dark th {
+	background: var(--charcoal) !important;
+	border-color: var(--border-col) !important;
+	color: #fff !important;
+	font-size: 13px !important;
+}
+.table td {
+	background-color: var(--bg-header) !important;
+	border-color: var(--border-col) !important;
+	font-size: 13px !important;
+	color: var(--hd-color) !important;
+}
+.table tbody {
+	background-color: var(--bg-header) !important;
+}
+.table tbody .actions button {
+	min-width: 32px;
+	height: 32px !important;
+	width: 32px !important;
+	margin: 0px 3px !important ;
+}
+.table tbody .actions button svg {
+	font-size: 32px !important;
+}
+.table tbody .actions button.secondary {
+	background-color: rgba(203, 60, 231, 0.2) !important;
+}
+.table tbody .actions button.success {
+	background-color: rgba(26, 159, 83, 0.2) !important;
+}
+.table tbody .actions button.error {
+	background-color: rgba(241, 17, 51, 0.2) !important;
+}
+.table.v-align td {
+	vertical-align: middle !important;
+}
+.tableFooter {
+	margin-bottom: 20px;
+}
+.tableFooter p {
+	font-size: 13px;
+	font-weight: 500;
+	margin-bottom: 0px;
+}
+.tableFooter .pagination {
+	margin-left: auto;
+}
+.tableFooter
+	.pagination
+	.css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+	background: var(--secondary-color) !important;
+	color: var(--darkText) !important;
+}
+.tableFooter .pagination .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root,
+.tableFooter .pagination .css-btxnvc-MuiPaginationItem-root {
+	color: var(--darkText) !important;
+}
+.tableFooter
+	.pagination
+	.css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root {
+	background-color: var(--hover-color) !important;
+}

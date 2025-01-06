@@ -3,8 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CgMenuRight, CgClose } from "react-icons/cg";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-import "../../css/header.css";
-
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [openDropdown, setOpenDropdown] = useState(null);
@@ -81,7 +79,7 @@ const Header = () => {
 
 
 	return (
-		<header className={`header ${isScrolled ? "scrolled" : "transparent"}`}>
+		<div className={`main-header ${isScrolled ? "scrolled" : "transparent"}`}>
 			<Link to="/" className="logo">
 				<img src="/EDUOSlogo.png" alt="EDUOS logo" />
 			</Link>
@@ -302,7 +300,7 @@ const Header = () => {
 					</button>
 				</div>
 			</div>
-		</header>
+		</div>
 	);
 };
 
