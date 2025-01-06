@@ -45,7 +45,7 @@ const Sidebar = () => {
 					<Link to={routes.buyProduct}>
 						<Button
 							className={`w-100 ${
-								location.pathname === `${routes.buyProduct}` ? "active" : ""
+								location.pathname === `${routes.buyProduct}` || location.pathname === `${routes.viewProduct}` ? "active" : ""
 							}`}
 							onClick={() => handleMenuClick(2)}
 						>

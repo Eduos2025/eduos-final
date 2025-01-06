@@ -114,9 +114,6 @@
 	.dashboard header .logo {
 		width: 100%;
 	}
-	.card{
-		flex-direction: column !important;
-	}
 	.display-product {
 		grid-template-columns: 1fr; /* 1 item per row on very small screens */
 	}

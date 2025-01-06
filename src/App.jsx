@@ -16,6 +16,7 @@ import UserDashboardLayout from "./layouts/UserDashboardLayout";
 import UserDashboard from "./pages/user-dashboard/Dashboard";
 import BuyProduct from "./pages/user-dashboard/BuyProduct";
 import routes from "./routes";
+import ViewProduct from "./pages/user-dashboard/ViewProduct";
 
 function App() {
 	return (
@@ -60,6 +61,14 @@ function App() {
 					element={
 						<UserDashboardLayout>
 							<BuyProduct />
+						</UserDashboardLayout>
+					}
+				/>
+				<Route
+					path={routes.viewProduct} 
+					element={
+						<UserDashboardLayout>
+							<ViewProduct />
 						</UserDashboardLayout>
 					}
 				/>

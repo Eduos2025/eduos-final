@@ -527,9 +527,9 @@ body.dark {
 .card {
 	margin: 20px 0px;
 	border-radius: 10px;
-	flex-direction: row !important;
 	background-color: var(--bg-header) !important;
 }
+
 .card .hd {
 	font-size: 18px;
 	font-weight: bold;
@@ -672,4 +672,11 @@ body.dark {
 .display-product .product .product-detail button {
 	width: 100% !important;
 	background-color: var(--accent-color) !important;
+}
+.bread-crumb-card{
+	margin: 20px 0px;
+	border-radius: 10px;
+	flex-direction: row !important;
+	background-color: var(--bg-header) !important;
+	flex-wrap: wrap;
 }
