@@ -41,10 +41,10 @@ const Sidebar = () => {
 				</li>
 
 				<li>
-					<Link to="#">
+					<Link to="/user/buy-product">
 						<Button
 							className={`w-100 ${
-								location.pathname === "#" ? "active" : ""
+								location.pathname === "/user/buy-product" ? "active" : ""
 							}`}
 							onClick={() => handleMenuClick(2)}
 						>
@@ -59,9 +59,7 @@ const Sidebar = () => {
 				<li>
 					<Link to="#">
 						<Button
-							className={`w-100 ${
-								location.pathname === "#" ? "active" : ""
-							}`}
+							className={`w-100 ${location.pathname === "#" ? "active" : ""}`}
 							onClick={() => handleMenuClick(2)}
 						>
 							<span className="icon">

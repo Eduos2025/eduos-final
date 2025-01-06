@@ -90,6 +90,12 @@
 		left: 0 !important;
 		opacity: 1 !important;
 	}
+		.display-product {
+		grid-template-columns: repeat(
+			2,
+			1fr
+		); /* 2 items per row on smaller screens */
+	}
 }
 @media (min-width: 320px) and (max-width: 575px) {
 	.dashboard header button.rounded-circle {
@@ -107,5 +113,11 @@
 	}
 	.dashboard header .logo {
 		width: 100%;
+	}
+	.card{
+		flex-direction: column !important;
+	}
+	.display-product {
+		grid-template-columns: 1fr; /* 1 item per row on very small screens */
 	}
 }

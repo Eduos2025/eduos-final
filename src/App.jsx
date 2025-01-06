@@ -14,6 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Newpage from "./pages/dashboard/Newpage";
 import UserDashboardLayout from "./layouts/UserDashboardLayout";
 import UserDashboard from "./pages/user-dashboard/Dashboard";
+import BuyProduct from "./pages/user-dashboard/BuyProduct";
 
 function App() {
 	return (
@@ -36,16 +37,31 @@ function App() {
 						</DashboardLayout>
 					}
 				/>
-				<Route path="/new" element={<DashboardLayout><Newpage/></DashboardLayout>} />
+				<Route
+					path="/new"
+					element={
+						<DashboardLayout>
+							<Newpage />
+						</DashboardLayout>
+					}
+				/>
 
 				{/* user dashboard  */}
 				<Route
-				   path="/user/dashboard"
-				   element={
-					<UserDashboardLayout>
-						<UserDashboard/>
-					</UserDashboardLayout>
-				}
+					path="/user/dashboard"
+					element={
+						<UserDashboardLayout>
+							<UserDashboard />
+						</UserDashboardLayout>
+					}
+				/>
+				<Route
+					path="/user/buy-product"
+					element={
+						<UserDashboardLayout>
+							<BuyProduct />
+						</UserDashboardLayout>
+					}
 				/>
 			</Routes>
 		</Router>
