@@ -18,13 +18,12 @@ import { MdMenuOpen } from "react-icons/md";
 import { MdOutlineMenu } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 import { Mycontext } from "../../layouts/UserDashboardLayout";
+import routes from "../../routes";
 
 const Header = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
-	const [isOpennotificationDrop, setisOpennotificationDrop] = useState(false);
 
 	const open = Boolean(anchorEl);
-	const openNotifications = Boolean(isOpennotificationDrop);
 
 	const context = useContext(Mycontext);
 
@@ -35,12 +34,6 @@ const Header = () => {
 		setAnchorEl(null);
 	};
 
-	const handleOpennotificationsDrop = () => {
-		setisOpennotificationDrop(true);
-	};
-	const handleClosenotificationsDrop = () => {
-		setisOpennotificationDrop(false);
-	};
 
 	return (
 		<header className="d-flex align-items-center">
@@ -48,7 +41,7 @@ const Header = () => {
 				<div className="row d-flex align-items-center w-100 ">
 					{/* Logo wrapper */}
 					<div className="col col-sm-2 d-flex align-items-center part1">
-						<Link to={"/dashboard"}>
+						<Link to={routes.userDashboard}>
 							<img src="/EDUOSlogo.png" alt="Logo" className="logo" />
 						</Link>
 					</div>
@@ -83,7 +76,7 @@ const Header = () => {
 						<div className="dropdownWrapper position-relative">
 							<Button
 								className="rounded-circle"
-								onClick={handleOpennotificationsDrop}
+
 							>
 								<IoIosNotificationsOutline />
 							</Button>
@@ -97,61 +90,6 @@ const Header = () => {
 								</Button>
 							)}
 
-							<Menu
-								anchorEl={isOpennotificationDrop}
-								id="notifications"
-								className="notifications"
-								open={openNotifications}
-								onClose={handleClosenotificationsDrop}
-								onClick={handleClosenotificationsDrop}
-								slotProps={{
-									paper: {
-										elevation: 0,
-										sx: {
-											overflow: "visible",
-											filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-											mt: 1.5,
-											"& .MuiAvatar-root": {
-												width: 32,
-												height: 32,
-												ml: -0.5,
-												mr: 1,
-											},
-											"&::before": {
-												content: '""',
-												display: "block",
-												position: "absolute",
-												top: 0,
-												right: 14,
-												width: 10,
-												height: 10,
-												bgcolor: "background.paper",
-												transform: "translateY(-50%) rotate(45deg)",
-												zIndex: 0,
-											},
-										},
-									},
-								}}
-							>
-								<MenuItem onClick={handleCloseMyAccDrop}>
-									<ListItemIcon>
-										<PersonAdd fontSize="small" />
-									</ListItemIcon>
-									My Notification
-								</MenuItem>
-								<MenuItem onClick={handleCloseMyAccDrop}>
-									<ListItemIcon>
-										<IoShieldHalfOutline />
-									</ListItemIcon>
-									Reset Password
-								</MenuItem>
-								<MenuItem onClick={handleCloseMyAccDrop}>
-									<ListItemIcon>
-										<Logout fontSize="small" />
-									</ListItemIcon>
-									Logout
-								</MenuItem>
-							</Menu>
 						</div>
 
 						<div className="myAccWrapper">

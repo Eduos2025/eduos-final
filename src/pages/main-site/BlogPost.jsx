@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaRegCommentDots } from "react-icons/fa";
 import AosInit from "../../components/AosInit";
+import routes from "../../routes";
 
 const BlogPost = () => {
 	const { title } = useParams();
@@ -23,9 +24,9 @@ const BlogPost = () => {
 				<div className="hero" data-aos="fade-up">
 					<h2>Blog</h2>
 					<div className="link">
-						<Link to="/">HOME</Link>
+						<Link to={routes.home}>HOME</Link>
 						<span>/</span>
-						<Link to="/blog">{blog.title}</Link>
+						<Link to={routes.blog}>{blog.title}</Link>
 					</div>
 				</div>
 			</div>

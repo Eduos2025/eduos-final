@@ -7,6 +7,7 @@ import {
 	SlSocialInstagram,
 } from "react-icons/sl";
 import "../../css/footer.css";
+import routes from "../../routes";
 
 const Footer = () => {
 	return (
@@ -23,15 +24,15 @@ const Footer = () => {
 				</div>
 				<div className="footer-item">
 					<h2>Useful Links</h2>
-					<Link to="/">Home</Link>
-					<Link to="/#about">About</Link>
-					<Link to="#">Contact</Link>
-					<Link to="#">Get Started</Link>
+					<Link to={routes.home}>Home</Link>
+					<Link to={routes.about}>About</Link>
+					<Link to={routes.contact}>Contact</Link>
+					<Link to={routes.register}>Get Started</Link>
 				</div>
 				<div className="footer-item">
 					<h2>Our Services</h2>
-					<Link to="/">Software Architecture and Design</Link>
-					<Link to="/">Software Development </Link>
+					<Link to="#">Software Architecture and Design</Link>
+					<Link to="#">Software Development </Link>
 					<Link to="#">Project Management</Link>
 					<Link to="#"> ICT Support and Consulting Services</Link>
 					<Link to="#">Feasibility Studies</Link>

@@ -7,6 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { IoMdLock } from "react-icons/io";
 import { FaWallet, FaServicestack } from "react-icons/fa";
+import routes from "../../routes";
 
 const Sidebar = () => {
 	const location = useLocation(); // Current route path
@@ -25,10 +26,10 @@ const Sidebar = () => {
 			<ul>
 				{/* Dashboard */}
 				<li>
-					<Link to="/user/dashboard">
+					<Link to={routes.userDashboard}>
 						<Button
 							className={`w-100 ${
-								location.pathname === "/user/dashboard" ? "active" : ""
+								location.pathname === `${routes.userDashboard}` ? "active" : ""
 							}`}
 							onClick={() => handleMenuClick(0)}
 						>
@@ -41,10 +42,10 @@ const Sidebar = () => {
 				</li>
 
 				<li>
-					<Link to="/user/buy-product">
+					<Link to={routes.buyProduct}>
 						<Button
 							className={`w-100 ${
-								location.pathname === "/user/buy-product" ? "active" : ""
+								location.pathname === `${routes.buyProduct}` ? "active" : ""
 							}`}
 							onClick={() => handleMenuClick(2)}
 						>

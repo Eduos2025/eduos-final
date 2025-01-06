@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CgMenuRight, CgClose } from "react-icons/cg";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import routes from "../../routes";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -80,21 +81,18 @@ const Header = () => {
 
 	return (
 		<div className={`main-header ${isScrolled ? "scrolled" : "transparent"}`}>
-			<Link to="/" className="logo">
+			<Link to={routes.home} className="logo">
 				<img src="/EDUOSlogo.png" alt="EDUOS logo" />
 			</Link>
 			<nav>
 				<Link
-					to="/"
-					className={`nav-link ${
-						location.pathname === "/" ? "active" : ""
-					}`}
-					
+					to={routes.home}
+					className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
 				>
 					Home
 				</Link>
 				<Link
-					to="/about"
+					to={routes.about}
 					className={`nav-link ${
 						location.pathname === "/about" ? "active" : ""
 					}`}
@@ -102,7 +100,7 @@ const Header = () => {
 					About
 				</Link>
 				<Link
-					to="/contact"
+					to={routes.contact}
 					className={`nav-link ${
 						location.pathname === "/contact" ? "active" : ""
 					}`}
@@ -110,7 +108,7 @@ const Header = () => {
 					Contact
 				</Link>
 				<Link
-					to="/blog"
+					to={routes.blog}
 					className={`nav-link ${isActive("/blog") ? "active" : ""}`}
 				>
 					Blog
@@ -124,8 +122,8 @@ const Header = () => {
 						<div className="demo">
 							<h4>Login Details</h4>
 							<Link
-								to="/demo"
-								className={`nav-link ${isActive("/demo") ? "active" : ""}`}
+								to="#"
+								className={`nav-link ${isActive("#") ? "active" : ""}`}
 							>
 								Demo Admin
 							</Link>
@@ -140,9 +138,9 @@ const Header = () => {
 						</div>
 
 						<Link
-							to="/services/entertainment"
+							to="#"
 							className={`nav-link ${
-								isActive("/services/entertainment") ? "active" : ""
+								isActive("#") ? "active" : ""
 							}`}
 						>
 							Demo Home Page
@@ -172,7 +170,7 @@ const Header = () => {
 			</nav>
 
 			<div className="auth">
-				<Link to={"/login"}>Login</Link>
+				<Link to={routes.login}>Login</Link>
 				<button className="getbtn" onClick={getStarted}>
 					{" "}
 					Get Started
@@ -185,7 +183,7 @@ const Header = () => {
 
 			<div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
 				<Link
-					to="/"
+					to={routes.home}
 					className={`nav-link ${
 						activeSection === "home" ? "mobileactive" : ""
 					}`}
@@ -194,7 +192,7 @@ const Header = () => {
 					Home
 				</Link>
 				<Link
-					to="/about"
+					to={routes.about}
 					className={`nav-link ${
 						location.pathname === "/about" ? "mobileactive" : ""
 					}`}
@@ -202,7 +200,7 @@ const Header = () => {
 					About
 				</Link>
 				<Link
-					to="/contact"
+					to={routes}
 					className={`nav-link ${
 						location.pathname === "/contact" ? "mobileactive" : ""
 					}`}
@@ -210,7 +208,7 @@ const Header = () => {
 					Contact
 				</Link>
 				<Link
-					to="/blog"
+					to={routes}
 					className={`nav-link ${isActive("/blog") ? "mobileactive" : ""}`}
 				>
 					Blog
@@ -249,9 +247,9 @@ const Header = () => {
 							</div>
 						</div>
 						<Link
-							to="/services/entertainment"
+							to="#"
 							className={`nav-link ${
-								isActive("/services/entertainment") ? "mobileactive" : ""
+								isActive("#") ? "mobileactive" : ""
 							}`}
 						>
 							Demo Home Page
@@ -273,17 +271,17 @@ const Header = () => {
 						}`}
 					>
 						<Link
-							to="/guides/tutorials"
+							to="#"
 							className={`nav-link ${
-								isActive("/guides/tutorials") ? "mobileactive" : ""
+								isActive("#") ? "mobileactive" : ""
 							}`}
 						>
 							How to install Akara Insight
 						</Link>
 						<Link
-							to="/guides/resources"
+							to="#"
 							className={`nav-link ${
-								isActive("/guides/resources") ? "mobileactive" : ""
+								isActive("#") ? "mobileactive" : ""
 							}`}
 						>
 							How to use Akara Insight
@@ -291,7 +289,7 @@ const Header = () => {
 					</div>
 				</div>
 				<div className="mobile-auth">
-					<Link to={"/login"} className="loginbtn">
+					<Link to={routes.login} className="loginbtn">
 						Login
 					</Link>
 					<button className="mobile-getbtn" onClick={getStarted}>

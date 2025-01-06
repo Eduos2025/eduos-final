@@ -10,7 +10,7 @@ const CallToAction = () => {
 				<p className="eduos-call-to-action-subheading">
 					Start your EDUOS journey today with a free demo.
 				</p>
-				<a href="/demo" className="eduos-call-to-action-btn">
+				<a href="#" className="eduos-call-to-action-btn">
 					Request a Demo
 				</a>
 			</div>

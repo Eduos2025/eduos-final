@@ -3,6 +3,7 @@ import AosInit from "../../components/AosInit";
 import Footer from "../../components/main-site/Footer";
 import "../../css/contact.css"
 import { Link } from "react-router-dom";
+import routes from "../../routes";
 
 const Contact = () => {
 	return (
@@ -13,9 +14,9 @@ const Contact = () => {
 				<div className="hero" data-aos="fade-up">
 					<h2>Contact Us</h2>
 					<div className="link">
-						<Link to="/">HOME</Link>
+						<Link to={routes.home}>HOME</Link>
 						<span>/</span>
-						<Link to="/contact">CONTACT</Link>
+						<Link to={routes.contact}>CONTACT</Link>
 					</div>
 				</div>
 			</div>

@@ -5,6 +5,7 @@ import TestimonialSlider from "../../components/main-site/TestimonialSlider";
 import { Link } from "react-router-dom";
 import AosInit from "../../components/AosInit";
 import "../../css/about.css"
+import routes from "../../routes";
 
 const About = () => {
 	return (
@@ -15,9 +16,9 @@ const About = () => {
 				<div className="hero" data-aos="fade-up">
 					<h2>About Us</h2>
 					<div className="link">
-						<Link to="/">HOME</Link>
+						<Link to={routes.home}>HOME</Link>
 						<span>/</span>
-						<Link to="/about">ABOUT</Link>
+						<Link to={routes.about}>ABOUT</Link>
 					</div>
 				</div>
 			</div>

@@ -7,6 +7,7 @@ import "../../css/blog.css";
 import blogData from "../../data/blogData";
 import { Link } from "react-router-dom";
 import AosInit from "../../components/AosInit";
+import routes from "../../routes";
 
 const Blog = () => {
 
@@ -18,9 +19,9 @@ const Blog = () => {
 				<div className="hero" data-aos="fade-up">
 					<h2>Blog</h2>
 					<div className="link">
-						<Link to="/">HOME</Link>
+						<Link to={routes.home}>HOME</Link>
 						<span>/</span>
-						<Link to="/blog">Blog</Link>
+						<Link to={routes.blog}>Blog</Link>
 					</div>
 				</div>
 			</div>

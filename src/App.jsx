@@ -15,22 +15,23 @@ import Newpage from "./pages/dashboard/Newpage";
 import UserDashboardLayout from "./layouts/UserDashboardLayout";
 import UserDashboard from "./pages/user-dashboard/Dashboard";
 import BuyProduct from "./pages/user-dashboard/BuyProduct";
+import routes from "./routes";
 
 function App() {
 	return (
 		<Router>
 			<ScrollToTop />
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/contact" element={<Contact />} />
-				<Route path="/login" element={<Login />} />
-				<Route path="/register" element={<Register />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/blog" element={<Blog />} />
-				<Route path="/blog/:title" element={<BlogPost />} />
+				<Route path={routes.home} element={<Home />} />
+				<Route path={routes.contact} element={<Contact />} />
+				<Route path={routes.login} element={<Login />} />
+				<Route path={routes.register} element={<Register />} />
+				<Route path={routes.about} element={<About />} />
+				<Route path={routes.blog} element={<Blog />} />
+				<Route path={routes.blogPost(":title")} element={<BlogPost />} />
 				{/* Dashboard Routes */}
 				<Route
-					path="/dashboard"
+					path={routes.dashboard}
 					element={
 						<DashboardLayout>
 							<Dashboard />
@@ -38,17 +39,16 @@ function App() {
 					}
 				/>
 				<Route
-					path="/new"
+					path={routes.newPage}
 					element={
 						<DashboardLayout>
 							<Newpage />
 						</DashboardLayout>
 					}
 				/>
-
-				{/* user dashboard  */}
+				{/* User Dashboard Routes */}
 				<Route
-					path="/user/dashboard"
+					path={routes.userDashboard}
 					element={
 						<UserDashboardLayout>
 							<UserDashboard />
@@ -56,7 +56,7 @@ function App() {
 					}
 				/>
 				<Route
-					path="/user/buy-product"
+					path={routes.buyProduct}
 					element={
 						<UserDashboardLayout>
 							<BuyProduct />
