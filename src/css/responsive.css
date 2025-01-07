@@ -90,11 +90,11 @@
 		left: 0 !important;
 		opacity: 1 !important;
 	}
-		.display-product {
-		grid-template-columns: repeat(
-			2,
-			1fr
-		); /* 2 items per row on smaller screens */
+	.display-product {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.main-container.view-product {
+		flex-wrap: wrap;
 	}
 }
 @media (min-width: 320px) and (max-width: 575px) {
