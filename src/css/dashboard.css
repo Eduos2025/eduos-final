@@ -725,12 +725,142 @@ body.dark {
 	color: var(--accent-color);
 	font-weight: 600;
 }
-.main-container .note{
+.main-container .note {
 	color: var(--mix-color);
 	line-height: 30px;
 	font-size: 18px;
 }
-.main-container.view-product button{
+.main-container.view-product button {
 	background-color: var(--primary-color);
 	margin: 1rem 0;
+}
+.checkout-form h5 {
+	font-size: 24px;
+	font-weight: 700;
+	color: var(--darkText);
+	margin-bottom: 1rem;
+}
+
+.checkout-form .input-field {
+	margin-bottom: 1.5rem;
+}
+.checkout-form .input-field .MuiOutlinedInput-root {
+	fieldset {
+		border-color: var(--darkText);
+	}
+}
+.checkout-form .select-field {
+	color: var(--darkText) !important;
+}
+.checkout-form .input-label,
+.checkout-form .input-field label,
+.checkout-form .css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input,
+.checkout-form .css-113d811-MuiFormLabel-root-MuiInputLabel-root,
+.checkout-form .input-field svg {
+	color: var(--darkText) !important;
+}
+.checkout-form .input-field .MuiOutlinedInput-root:hover fieldset {
+	border-color: var(--secondary-color);
+}
+.checkout-form .input-field .MuiOutlinedInput-root.Mui-focused fieldset {
+	border-color: var(--secondary-color);
+}
+.checkout-form .submit-button {
+	background-color: var(--dark-teal);
+	color: var(--white);
+	transition: background-color 0.3s;
+	width: 50%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+}
+.checkout-form .submit-button:hover {
+	background-color: var(--light-green);
+}
+.payment-summary .row-top .status {
+	background-color: rgb(255, 255, 59);
+	color: black;
+	padding: 4px;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+}
+.transaction-details p {
+	color: var(--hd-color) !important;
+}
+.transaction-details h6 {
+	font-weight: bold;
+	color: var(--primary-color) !important;
+	font-size: 16px;
+}
+.buyer-details,
+.our-details,
+.trnasID {
+	margin-bottom: 16px;
+}
+.trnasID p {
+	font-weight: 600;
+}
+.payment-total {
+	width: 30%;
+	margin-left: auto;
+}
+.payment-total .content-left,
+.payment-total .content-right {
+	background: none !important;
+	font-weight: 700;
+	font-size: 12px;
+	padding: 5px;
+	color: var(--darkText) !important;
+}
+.payment-total .content-left {
+	text-align: left;
+}
+.payment-total .content-right {
+	text-align: right;
+}
+.payment-summary button{
+	background-color: var(--primary-color)	!important;
+	text-transform: capitalize !important;
+}
+.payment-success h4{
+	color: var(--darkText) !important;
+}
+.payment-success button{
+	background-color: var(--dark-teal) !important;
+	text-transform: capitalize !important;
+}
+.payment-success .linear-progress {
+  width: 80%;
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background-color: var(--light-gray)
+}
+.payment-success .linear-progress .MuiLinearProgress-bar {
+  background-color: var(--primary-color);
+}
+.congrats{
+	text-align: center;
+}
+.congrats h6{
+	margin-bottom: 0 !important;
+}
+.congrats .admin-credentials{
+font-size: 13px;
+padding: 10px;
+margin: 1rem 0;}
+.congrats .admin-credentials h4{
+font-size: 14px;
+margin: 0 0 .4rem 0;
+}
+.congrats .admin-credentials p{
+	margin: 0 !important;
+	text-align: center;
+}
+.congrats a{
+	color: var(--secondary-color) !important;
 }

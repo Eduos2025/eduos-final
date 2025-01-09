@@ -10,7 +10,10 @@ const routes = {
 	newPage: "/new",
 	userDashboard: "/user/dashboard",
 	buyProduct: "/user/buy-product",
-    viewProduct: "/user/view-product",
+	viewProduct: "/user/view-product",
+	orderSummary: "/user/payment-summary",
+	paymentSuccess: "/user/payment-success",
+	Congrats: "/user/congrats",
 };
 
 export default routes;

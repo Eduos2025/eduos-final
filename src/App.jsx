@@ -17,7 +17,9 @@ import UserDashboard from "./pages/user-dashboard/Dashboard";
 import BuyProduct from "./pages/user-dashboard/BuyProduct";
 import routes from "./routes";
 import ViewProduct from "./pages/user-dashboard/ViewProduct";
-
+import OrderSummary from "./pages/user-dashboard/OrderSummary";
+import PaymentSuccess from "./pages/user-dashboard/PaymentSuccess";
+import Congrats from "./components/user-dashboard/Congrats";
 function App() {
 	return (
 		<Router>
@@ -65,10 +67,34 @@ function App() {
 					}
 				/>
 				<Route
-					path={routes.viewProduct} 
+					path={routes.viewProduct}
 					element={
 						<UserDashboardLayout>
 							<ViewProduct />
+						</UserDashboardLayout>
+					}
+				/>
+				<Route
+					path={routes.orderSummary}
+					element={
+						<UserDashboardLayout>
+							<OrderSummary />
+						</UserDashboardLayout>
+					}
+				/>
+				<Route
+					path={routes.paymentSuccess}
+					element={
+						<UserDashboardLayout>
+							<PaymentSuccess />
+						</UserDashboardLayout>
+					}
+				/>
+				<Route
+					path={routes.Congrats}
+					element={
+						<UserDashboardLayout>
+							<Congrats />
 						</UserDashboardLayout>
 					}
 				/>
