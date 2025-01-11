@@ -51,6 +51,9 @@ const UserDashboardLayout = ({ children }) => {
 	const openNav = () => {
 		setIsOpenNav(true);
 	};
+	const closeNav = () => {
+        setIsOpenNav(false);
+    };
 
 	const values = {
 		isToggleSidebar,
@@ -77,7 +80,7 @@ const UserDashboardLayout = ({ children }) => {
 							isOpenNav ? "open" : ""
 						}`}
 					>
-						<Sidebar />
+						<Sidebar onClose={closeNav} />
 					</div>
 					<div className={`content ${isToggleSidebar ? "toggle" : ""}`}>
 						{children}

@@ -9,7 +9,9 @@ import { IoMdLock } from "react-icons/io";
 import { FaServicestack } from "react-icons/fa";
 import routes from "../../routes";
 import { IoMdNotifications } from "react-icons/io";
-const Sidebar = () => {
+import PropTypes from "prop-types";
+
+const Sidebar = ({ onClose }) => {
 	const location = useLocation(); // Current route path
 	const [activeTab, setActiveTab] = useState(-1); // Manage active tabs
 	const [isToggleSubmenu, setIsToggleSubmenu] = useState(false); // Dropdown toggle
@@ -18,6 +20,9 @@ const Sidebar = () => {
 		setActiveTab(index);
 		if (hasSubmenu) {
 			setIsToggleSubmenu((prev) => !prev);
+		} else {
+			// Call the onClose function when a menu item is clicked
+			onClose();
 		}
 	};
 
@@ -171,3 +176,6 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+Sidebar.propTypes = {
+    onClose: PropTypes.func.isRequired, // onClose should be a required function
+};
