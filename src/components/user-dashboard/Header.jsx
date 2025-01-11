@@ -19,8 +19,10 @@ import { MdOutlineMenu } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 import { Mycontext } from "../../layouts/UserDashboardLayout";
 import routes from "../../routes";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+	  const navigate = useNavigate();
 	const [anchorEl, setAnchorEl] = useState(null);
 
 	const open = Boolean(anchorEl);
@@ -76,7 +78,7 @@ const Header = () => {
 						<div className="dropdownWrapper position-relative">
 							<Button
 								className="rounded-circle"
-
+								onClick={() => navigate(routes.userNotification)}
 							>
 								<IoIosNotificationsOutline />
 							</Button>
@@ -89,7 +91,6 @@ const Header = () => {
 									<IoMenu />
 								</Button>
 							)}
-
 						</div>
 
 						<div className="myAccWrapper">
@@ -149,7 +150,7 @@ const Header = () => {
 									<ListItemIcon>
 										<PersonAdd fontSize="small" />
 									</ListItemIcon>
-									my Account
+								My Account
 								</MenuItem>
 								<MenuItem onClick={handleCloseMyAccDrop}>
 									<ListItemIcon>

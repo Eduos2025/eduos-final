@@ -20,6 +20,7 @@ import ViewProduct from "./pages/user-dashboard/ViewProduct";
 import OrderSummary from "./pages/user-dashboard/OrderSummary";
 import PaymentSuccess from "./pages/user-dashboard/PaymentSuccess";
 import Congrats from "./components/user-dashboard/Congrats";
+import Notification from "./pages/user-dashboard/Notification";
 function App() {
 	return (
 		<Router>
@@ -95,6 +96,14 @@ function App() {
 					element={
 						<UserDashboardLayout>
 							<Congrats />
+						</UserDashboardLayout>
+					}
+				/>
+				<Route
+					path={routes.userNotification}
+					element={
+						<UserDashboardLayout>
+							<Notification />
 						</UserDashboardLayout>
 					}
 				/>

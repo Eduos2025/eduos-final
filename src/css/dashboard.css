@@ -822,45 +822,116 @@ body.dark {
 .payment-total .content-right {
 	text-align: right;
 }
-.payment-summary button{
-	background-color: var(--primary-color)	!important;
+.payment-summary button {
+	background-color: var(--primary-color) !important;
 	text-transform: capitalize !important;
 }
-.payment-success h4{
+.payment-success h4 {
 	color: var(--darkText) !important;
 }
-.payment-success button{
+.payment-success button {
 	background-color: var(--dark-teal) !important;
 	text-transform: capitalize !important;
 }
 .payment-success .linear-progress {
-  width: 80%;
-  height: 10px;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  background-color: var(--light-gray)
+	width: 80%;
+	height: 10px;
+	border-radius: 5px;
+	margin-bottom: 1rem;
+	background-color: var(--light-gray);
 }
 .payment-success .linear-progress .MuiLinearProgress-bar {
-  background-color: var(--primary-color);
+	background-color: var(--primary-color);
 }
-.congrats{
+.congrats {
 	text-align: center;
 }
-.congrats h6{
+.congrats h6 {
 	margin-bottom: 0 !important;
 }
-.congrats .admin-credentials{
-font-size: 13px;
-padding: 10px;
-margin: 1rem 0;}
-.congrats .admin-credentials h4{
-font-size: 14px;
-margin: 0 0 .4rem 0;
+.congrats .admin-credentials {
+	font-size: 13px;
+	padding: 10px;
+	margin: 1rem 0;
 }
-.congrats .admin-credentials p{
+.congrats .admin-credentials h4 {
+	font-size: 14px;
+	margin: 0 0 0.4rem 0;
+}
+.congrats .admin-credentials p {
 	margin: 0 !important;
 	text-align: center;
 }
-.congrats a{
+.congrats a {
 	color: var(--secondary-color) !important;
+}
+
+.notifications-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.notifications-header button{
+	text-transform: none !important;
+		background-color: var(--dark-teal) !important;
+}
+.notifications-title {
+	font-weight: bold;
+}
+.mark-read-btn {
+	text-transform: none;
+}
+.notifications-list {
+	padding: 5px;
+	color: var(--darkText);
+}
+.notification-item {
+	border-bottom: 1px solid #eee;
+	padding: 10px 0;
+}
+.notification-item:last-child {
+	border-bottom: none;
+}
+.notification-item.success {
+	background-color: rgb(1, 142, 1, 0.2);
+}
+
+.notification-item.warning {
+	background-color: rgb(255, 255, 2, 0.3);
+}
+
+.notification-item.info {
+	background-color:rgb(0, 0, 255, 0.3);
+}
+.blinker {
+  display: inline-block;
+  width: 8px ; 
+  height: 8px;
+  background-color: var(--secondary-color); /* Blinker color */
+  border-radius: 50%; /* Makes it circular */
+  margin-left: auto;
+  animation: echo-animation 1.5s infinite; /* Apply the animation */
+}
+@keyframes echo-animation {
+  0% {
+    transform: scale(1); 
+    opacity: 1; 
+  }
+  25% {
+    transform: scale(1.25); 
+    opacity: 0.5; 
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0; 
+  }
+  75% {
+    transform: scale(1.25); 
+    opacity: 0.5; 
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1; 
+  }
 }

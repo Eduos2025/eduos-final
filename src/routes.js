@@ -14,6 +14,7 @@ const routes = {
 	orderSummary: "/user/payment-summary",
 	paymentSuccess: "/user/payment-success",
 	Congrats: "/user/congrats",
+	userNotification: "/user/notification",
 };
 
 export default routes;

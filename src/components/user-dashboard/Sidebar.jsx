@@ -6,9 +6,9 @@ import { BiPlayCircle } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { IoMdLock } from "react-icons/io";
-import { FaWallet, FaServicestack } from "react-icons/fa";
+import { FaServicestack } from "react-icons/fa";
 import routes from "../../routes";
-
+import { IoMdNotifications } from "react-icons/io";
 const Sidebar = () => {
 	const location = useLocation(); // Current route path
 	const [activeTab, setActiveTab] = useState(-1); // Manage active tabs
@@ -45,7 +45,11 @@ const Sidebar = () => {
 					<Link to={routes.buyProduct}>
 						<Button
 							className={`w-100 ${
-								location.pathname === `${routes.buyProduct}` || location.pathname === `${routes.viewProduct}` || location.pathname === `${routes.orderSummary}` ? "active" : ""
+								location.pathname === `${routes.buyProduct}` ||
+								location.pathname === `${routes.viewProduct}` ||
+								location.pathname === `${routes.orderSummary}`
+									? "active"
+									: ""
 							}`}
 							onClick={() => handleMenuClick(2)}
 						>
@@ -132,15 +136,22 @@ const Sidebar = () => {
 
 				{/* Mail */}
 				<li>
-					<Button
-						className={`w-100 ${location.pathname === "/mail" ? "active" : ""}`}
-						onClick={() => handleMenuClick(3)}
-					>
-						<span className="icon">
-							<FaWallet />
-						</span>
-						My Wallet
-					</Button>
+					<Link to={routes.userNotification}>
+						<Button
+							className={`w-100 ${
+								location.pathname === `${routes.userNotification}`
+									? "active"
+									: ""
+							}`}
+							onClick={() => handleMenuClick(3)}
+						>
+							<span className="icon">
+								<IoMdNotifications />
+							</span>
+							Notification
+							<span className="blinker"></span>
+						</Button>
+					</Link>
 				</li>
 			</ul>
 
