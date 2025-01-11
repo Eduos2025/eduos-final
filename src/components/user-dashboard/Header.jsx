@@ -146,11 +146,16 @@ const Header = () => {
 								transformOrigin={{ horizontal: "right", vertical: "top" }}
 								anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
 							>
-								<MenuItem onClick={handleCloseMyAccDrop}>
+								<MenuItem
+									onClick={() => {
+										handleCloseMyAccDrop();
+										navigate(routes.userMyAccount); 
+									}}
+								>
 									<ListItemIcon>
 										<PersonAdd fontSize="small" />
 									</ListItemIcon>
-								My Account
+									My Account
 								</MenuItem>
 								<MenuItem onClick={handleCloseMyAccDrop}>
 									<ListItemIcon>

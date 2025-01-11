@@ -872,9 +872,9 @@ body.dark {
 	align-items: center;
 	margin-bottom: 20px;
 }
-.notifications-header button{
+.notifications-header button {
 	text-transform: none !important;
-		background-color: var(--dark-teal) !important;
+	background-color: var(--dark-teal) !important;
 }
 .notifications-title {
 	font-weight: bold;
@@ -902,36 +902,116 @@ body.dark {
 }
 
 .notification-item.info {
-	background-color:rgb(0, 0, 255, 0.3);
+	background-color: rgb(0, 0, 255, 0.3);
 }
 .blinker {
-  display: inline-block;
-  width: 8px ; 
-  height: 8px;
-  background-color: var(--secondary-color); /* Blinker color */
-  border-radius: 50%; /* Makes it circular */
-  margin-left: auto;
-  animation: echo-animation 1.5s infinite; /* Apply the animation */
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background-color: var(--secondary-color); /* Blinker color */
+	border-radius: 50%; /* Makes it circular */
+	margin-left: auto;
+	animation: echo-animation 1.5s infinite; /* Apply the animation */
 }
 @keyframes echo-animation {
-  0% {
-    transform: scale(1); 
-    opacity: 1; 
-  }
-  25% {
-    transform: scale(1.25); 
-    opacity: 0.5; 
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0; 
-  }
-  75% {
-    transform: scale(1.25); 
-    opacity: 0.5; 
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1; 
-  }
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	25% {
+		transform: scale(1.25);
+		opacity: 0.5;
+	}
+	50% {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+	75% {
+		transform: scale(1.25);
+		opacity: 0.5;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+.myAccountPage-form .myAccountPage-profilePic {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px 0;
+}
+
+.myAccountPage-form .myAccountPage-profilePicLabel {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* background-color: #f0f0f0; */
+	border: 2px solid var(--border-col);
+	cursor: pointer;
+	position: relative;
+}
+.myAccountPage-form .Profile-avatar {
+	width: 100% !important;
+	height: 100% !important;
+}
+.myAccountPage-form .myAccountPage-profilePicLabel:hover {
+	border-color: var(--primary-color);
+}
+.myAccountPage-form .myAccountPage-profilePicLabel img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.myAccountPage-form .myAccountPage-profilePicInput {
+	display: none; /* Hide default file input */
+}
+
+.myAccountPage-form .myAccountPage-profilePic-text {
+	font-size: 14px;
+	color: var(--darkText);
+	text-align: center;
+	margin-top: 8px;
+}
+
+.myAccountPage-form .myAccountPage-saveButton {
+	margin-top: 20px;
+	width: 100%;
+}
+
+.myAccountPage-form  .input-field input {
+	color: var(--darkText) !important;
+}
+.myAccountPage-form  .input-field .MuiOutlinedInput-root {
+	fieldset {
+		border-color: var(--darkText);
+	}
+}
+.myAccountPage-form  .input-field label {
+	color: var(--darkText) !important;
+}
+.myAccountPage-form  .input-field .MuiOutlinedInput-root:hover fieldset {
+	border-color: var(--secondary-color);
+}
+.myAccountPage-form  .input-field .MuiOutlinedInput-root.Mui-focused fieldset {
+	border-color: var(--secondary-color);
+}
+.myAccountPage-form  button {
+	background-color: var(--dark-teal);
+	color: var(--white);
+	transition: background-color 0.3s;
+	width: 50% !important;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+}
+.myAccountPage-form  button:hover {
+	background-color: var(--light-green);
 }

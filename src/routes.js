@@ -15,6 +15,7 @@ const routes = {
 	paymentSuccess: "/user/payment-success",
 	Congrats: "/user/congrats",
 	userNotification: "/user/notification",
+	userMyAccount: "/user/my-account",
 };
 
 export default routes;
