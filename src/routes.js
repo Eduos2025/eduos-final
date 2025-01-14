@@ -16,6 +16,9 @@ const routes = {
 	Congrats: "/user/congrats",
 	userNotification: "/user/notification",
 	userMyAccount: "/user/my-account",
+	userResetPassword: "/user/reset-password",
+	ourFeatures: "/user/our-features",
+	pricePlan: "/user/price-plan",
 };
 
 export default routes;

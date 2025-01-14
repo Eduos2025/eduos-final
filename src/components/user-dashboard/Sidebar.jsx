@@ -5,11 +5,12 @@ import { MdShoppingCart } from "react-icons/md";
 import { BiPlayCircle } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { IoMdLock } from "react-icons/io";
+import { IoMdLock, IoMdPricetags } from "react-icons/io";
 import { FaServicestack } from "react-icons/fa";
 import routes from "../../routes";
 import { IoMdNotifications } from "react-icons/io";
 import PropTypes from "prop-types";
+import { AiOutlineFolderOpen } from "react-icons/ai";
 
 const Sidebar = ({ onClose }) => {
 	const location = useLocation(); // Current route path
@@ -76,6 +77,37 @@ const Sidebar = ({ onClose }) => {
 								<BiPlayCircle />
 							</span>
 							Live Demo
+						</Button>
+					</Link>
+				</li>
+				<li>
+					<Link to={routes.ourFeatures}>
+						<Button
+							className={`w-100 ${
+								location.pathname === `${routes.ourFeatures}` ? "active" : ""
+							}`}
+							onClick={() => handleMenuClick(2)}
+						>
+							<span className="icon">
+								<AiOutlineFolderOpen />
+							</span>
+							Our Features
+						</Button>
+					</Link>
+				</li>
+
+				<li>
+					<Link to={routes.pricePlan}>
+						<Button
+							className={`w-100 ${
+								location.pathname === `${routes.pricePlan}` ? "active" : ""
+							}`}
+							onClick={() => handleMenuClick(2)}
+						>
+							<span className="icon">
+								<IoMdPricetags />
+							</span>
+							Price Plan
 						</Button>
 					</Link>
 				</li>

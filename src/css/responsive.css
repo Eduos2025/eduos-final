@@ -96,6 +96,12 @@
 	.main-container.view-product {
 		flex-wrap: wrap;
 	}
+	.price-plan .pricing-section h3{
+		font-size: 20px;
+	}
+	.price-plan .pricing-section .pricing-subtitle {
+		font-size: 18px;
+	}
 }
 @media (min-width: 320px) and (max-width: 575px) {
 	.dashboard header button.rounded-circle {
@@ -116,5 +122,13 @@
 	}
 	.display-product {
 		grid-template-columns: 1fr; /* 1 item per row on very small screens */
+	}
+	.price-plan .pricing-section .pricing-cards {
+		flex-wrap: wrap;
+		width: 100% !important;
+	}
+	.price-plan .pricing-section .pricing-cards .pricing-card {
+		width: 100% !important;
+		max-width: 100% !important;
 	}
 }

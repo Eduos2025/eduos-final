@@ -22,7 +22,7 @@ import routes from "../../routes";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-	  const navigate = useNavigate();
+	const navigate = useNavigate();
 	const [anchorEl, setAnchorEl] = useState(null);
 
 	const open = Boolean(anchorEl);
@@ -35,7 +35,6 @@ const Header = () => {
 	const handleCloseMyAccDrop = () => {
 		setAnchorEl(null);
 	};
-
 
 	return (
 		<header className="d-flex align-items-center">
@@ -149,7 +148,7 @@ const Header = () => {
 								<MenuItem
 									onClick={() => {
 										handleCloseMyAccDrop();
-										navigate(routes.userMyAccount); 
+										navigate(routes.userMyAccount);
 									}}
 								>
 									<ListItemIcon>
@@ -157,7 +156,9 @@ const Header = () => {
 									</ListItemIcon>
 									My Account
 								</MenuItem>
-								<MenuItem onClick={handleCloseMyAccDrop}>
+								<MenuItem onClick={() => {handleCloseMyAccDrop();
+									navigate(routes.userResetPassword);
+								}}>
 									<ListItemIcon>
 										<IoShieldHalfOutline />
 									</ListItemIcon>
