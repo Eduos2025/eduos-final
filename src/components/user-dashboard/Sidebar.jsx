@@ -123,7 +123,7 @@ const Sidebar = ({ onClose }) => {
 						<span className="icon">
 							<FaServicestack />
 						</span>
-						Services
+						My Services
 						<span className="arrow">
 							<FaAngleRight />
 						</span>
@@ -137,32 +137,26 @@ const Sidebar = ({ onClose }) => {
 						<ul className="submenu">
 							<li>
 								<Link
-									to="/product/add"
+									to={routes.ManageRegisteredProduct}
 									className={`${
-										location.pathname === "/product/add" ? "active" : ""
+										location.pathname === `${routes.ManageRegisteredProduct}`
+											? "active"
+											: ""
 									}`}
 								>
-									Add Product
+									Manage Registered Product
 								</Link>
 							</li>
 							<li>
 								<Link
-									to="/product/view"
+									to={routes.productHistory}
 									className={`${
-										location.pathname === "/product/view" ? "active" : ""
+										location.pathname === `${routes.productHistory}`
+											? "active"
+											: ""
 									}`}
 								>
-									View Product
-								</Link>
-							</li>
-							<li>
-								<Link
-									to="/product/list"
-									className={`${
-										location.pathname === "/product/list" ? "active" : ""
-									}`}
-								>
-									List Product
+									Products History
 								</Link>
 							</li>
 						</ul>

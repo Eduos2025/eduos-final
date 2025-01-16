@@ -32,6 +32,8 @@ import MyAccount from "./pages/user-dashboard/MyAccount";
 import ResetPassword from "./pages/user-dashboard/ResetPassword";
 import OurFeatures from "./pages/user-dashboard/OurFeatures";
 import PricePlan from "./pages/user-dashboard/PricePlan";
+import ProductHistory from "./pages/user-dashboard/ProductHistory";
+import ManageRegProduct from "./pages/user-dashboard/ManageRegProduct";
 
 const App = () => {
 	const renderRoutesWithLayout = (Layout, routes) =>
@@ -71,6 +73,8 @@ const App = () => {
 					{ path: routes.userResetPassword, element: <ResetPassword /> },
 					{ path: routes.ourFeatures, element: <OurFeatures /> },
 					{ path: routes.pricePlan, element: <PricePlan /> },
+					{ path: routes.productHistory, element: <ProductHistory /> },
+					{ path: routes.ManageRegisteredProduct, element: <ManageRegProduct /> },
 				])}
 			</Routes>
 		</Router>

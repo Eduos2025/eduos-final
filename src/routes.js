@@ -19,6 +19,8 @@ const routes = {
 	userResetPassword: "/user/reset-password",
 	ourFeatures: "/user/our-features",
 	pricePlan: "/user/price-plan",
+	productHistory: "/user/product-history",
+	ManageRegisteredProduct: "/user/manage-registered-product",
 };
 
 export default routes;

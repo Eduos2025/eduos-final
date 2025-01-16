@@ -325,6 +325,9 @@ body.dark {
 	font-weight: 500;
 	transition: all 0.3s ease-in-out;
 }
+.main .sidebarWrapper .sidebar ul .submenu li a.active {
+	color: var(--dark-teal) !important;
+}
 .main .sidebarWrapper .sidebar ul .submenu li a:hover {
 	color: var(--primary-color) !important;
 }
@@ -1085,7 +1088,7 @@ body.dark {
 	box-shadow: none !important;
 	cursor: pointer;
 }
-.price-plan .pricing-section .pricing-cards .pricing-card:hover{
+.price-plan .pricing-section .pricing-cards .pricing-card:hover {
 	transform: scale(1.05);
 }
 .price-plan .pricing-section .pricing-cards .pricing-card .plan-title {
@@ -1107,7 +1110,7 @@ body.dark {
 	margin: 1.5rem 0;
 	text-align: left;
 }
-.price-plan .pricing-section .pricing-cards .pricing-card .plan-features li *{
+.price-plan .pricing-section .pricing-cards .pricing-card .plan-features li * {
 	color: var(--primary-color) !important;
 }
 .price-plan .pricing-section .pricing-cards .popular-badge {
@@ -1120,4 +1123,126 @@ body.dark {
 	right: 3%;
 	top: 2%;
 	color: var(--lightText) !important;
+}
+.tbl-30 .css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input {
+	padding: 10px !important;
+	font-size: 12px;
+}
+.tbl-30-search .MuiOutlinedInput-root fieldset {
+	border:1px solid var(--darkText);
+}
+.tbl-30-search .MuiOutlinedInput-root:hover fieldset {
+	border-color: var(--secondary-color);
+}
+.tbl-30-search .MuiOutlinedInput-root.Mui-focused fieldset {
+	border-color: var(--primary-color);
+}
+.tbl-30-search .MuiInputBase-input {
+	text-align: left;
+	color: var(--darkText) !important;
+}
+.table-container {
+	margin-top: 1rem !important;
+}
+.table-head {
+	background-color: #333333;
+	margin-top: 1rem;
+}
+.table-head th {
+	color: #fff !important;
+	font-weight: bold;
+	/* text-align: center; */
+	text-transform: uppercase;
+	font-size: 12px;
+	padding: 0.3rem !important;
+}
+.table-container tbody tr td {
+	/* text-align: center; */
+	color: var(--hd-color) !important;
+	font-size: 12px;
+}
+.table-container tbody tr td a{
+	color: var(--secondary-color);
+	text-decoration: none;
+}
+.table-container 
+.status {
+  padding: 5px 5px !important;
+  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+/* Active status */
+.table-container  .status-active {
+  background-color: #e0f7fa; 
+  color: #00796b;
+}
+/* Inactive status */
+.table-container  .status-inactive {
+  background-color: #ffebee; 
+  color: #d32f2f; 
+}
+.table-container .status-pending {
+	color: black;
+	background-color: yellow;
+}
+
+.table-pagination-container .MuiToolbar-root {
+  /* border-top: 1px solid #ddd;  */
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown for rows per page */
+.table-pagination-container .MuiTablePagination-selectLabel,
+.table-pagination-container .MuiSelect-root {
+  color: var(--darkText) !important; 
+  font-weight: bold;
+  margin-bottom: 0 !important;
+}
+.table-pagination-container .MuiTablePagination-select{
+	color: var(--hd-color) !important; 
+}
+.table-pagination-container .MuiTablePagination-select .MuiSvgIcon-root{
+	color: var(--accent-color);
+}
+.table-pagination-container .MuiTablePagination-actions{
+	color: var(--darkText) !important;
+}
+.table-pagination-container .MuiTablePagination-actions .Mui-disabled{
+	color: var(--hd-color) !important;
+	margin-bottom: 0 !important;
+}
+.table-pagination-container .MuiTablePagination-displayedRows{
+margin-bottom: 0 !important;
+}
+/* Page navigation buttons */
+/* .table-pagination-container .MuiTablePagination-actions button {
+  color: #1976d2; 
+  transition: transform 0.2s ease;
+} */
+.table-pagination-container .MuiTablePagination-actions button:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+/* Active page button */
+.table-pagination-container .Mui-selected {
+  background-color: #e0f7fa; /* Highlight for the active page */
+  color: #00796b; /* Active text color */
+}
+.action-cell button{
+	background-color: var(--hd-color);
+	color: var(--lightText) !important;
+}
+.popover-content{
+	background-color: var(--light-gray) !important;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.popover-content button{
+	width: 100%;
+	color: #000 !important;
 }
