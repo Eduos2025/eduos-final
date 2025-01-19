@@ -1,12 +1,6 @@
 import UserDashboardBox from "../../components/user-dashboard/UserDashboardBox";
 import { TbStarsFilled } from "react-icons/tb";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import { useState } from "react";
-import { IoIosTimer } from "react-icons/io";
-import { HiOutlineDotsVertical } from "react-icons/hi";
 import Button from "@mui/material/Button";
-import { Chart } from "react-google-charts";
 import { FaEye, FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Pagination from "@mui/material/Pagination";
@@ -15,30 +9,10 @@ import {
 	FaUserGraduate,
 	FaMoneyCheckAlt,
 } from "react-icons/fa";
+import UserGraph from "../../components/user-dashboard/UserGraph";
 
-const data = [
-	["Year", "Sales", "Expenses"],
-	["2013", 1000, 400],
-	["2014", 1170, 460],
-	["2015", 660, 1120],
-	["2016", 1030, 540],
-];
-
-const options = {
-	backgroundColor: "transparent",
-	chartArea: { width: "100%", height: "100%" },
-};
 
 const UserDashboard = () => {
-	const [anchorEl, setAnchorEl] = useState(null);
-	const open = Boolean(anchorEl);
-	const handleClick = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
-	const ITEM_HEIGHT = 48;
 	return (
 		<>
 			{/* Right content wrapper */}
@@ -46,9 +20,9 @@ const UserDashboard = () => {
 				{/* Row wrapper */}
 				<div className="row dashboardBoxWrapperRow">
 					{/* Column wrapper for dashboard boxes */}
-					<div className="col-md-8 bottomEle">
+					<div className="col-md-12 bottomEle">
 						{/* Dashboard box wrapper */}
-						<div className="dashboardBoxWrapper">
+						<div className="user dashboardBoxWrapper">
 							<UserDashboardBox
 								color={["#1da256", "#48d483"]}
 								title="All subscription"
@@ -80,61 +54,10 @@ const UserDashboard = () => {
 						</div>
 					</div>
 					{/* Column wrapper for box component */}
-					<div className="col-md-4 pr-0 boxEle topPart2">
-						{/* Box component */}
-						<div className="box graphBox">
-							<div className="d-flex align-items-center w-100 justify-content-between bottomEle">
-								<h6 className="text-white mb-0 mt-0">Total Sales</h6>
-								<div className="ml-auto">
-									<Button className="ml-auto toggleIcon" onClick={handleClick}>
-										<HiOutlineDotsVertical />
-									</Button>
-									<Menu
-										className="dropdown_menu"
-										MenuListProps={{
-											"aria-labelledby": "long-button",
-										}}
-										anchorEl={anchorEl}
-										open={open}
-										onClose={handleClose}
-										slotProps={{
-											paper: {
-												style: {
-													maxHeight: ITEM_HEIGHT * 4.5,
-													width: "20ch",
-												},
-											},
-										}}
-									>
-										<MenuItem onClick={handleClose}>
-											<IoIosTimer /> Last day
-										</MenuItem>
-										<MenuItem onClick={handleClose}>
-											<IoIosTimer /> Last Week
-										</MenuItem>
-										<MenuItem onClick={handleClose}>
-											<IoIosTimer /> Last Month
-										</MenuItem>
-										<MenuItem onClick={handleClose}>
-											<IoIosTimer /> Last Year
-										</MenuItem>
-									</Menu>
-								</div>
-							</div>
-
-							<h3>$3,787,681.00</h3>
-							<p>$3,345.56 in last Month</p>
-
-							<Chart
-								chartType="PieChart"
-								width="100%"
-								height="170px"
-								data={data}
-								options={options}
-							/>
-						</div>
-					</div>
+					
 				</div>
+
+				<UserGraph/>
 
 				<div className="card shadow border-0 p-3 mt-4">
 					<h3 className="hd">Best Selling Products</h3>

@@ -430,6 +430,7 @@ body.dark {
 	text-align: left !important;
 	text-transform: capitalize;
 }
+
 .dashboardBoxWrapper .dashboardBox .col1 h4 {
 	font-size: 20px;
 	font-weight: 600;
@@ -437,6 +438,30 @@ body.dark {
 }
 .dashboardBoxWrapper .dashboardBox .col1 span {
 	font-size: 40px;
+	font-weight: bold;
+	line-height: 45px;
+}
+.user.dashboardBoxWrapper {
+	display: flex !important;
+	flex-wrap: nowrap !important;
+}
+.user.dashboardBoxWrapper .dashboardBox {
+	width: 100% !important;
+	height: 190px;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: left !important;
+	text-transform: capitalize;
+}
+.user.dashboardBoxWrapper .dashboardBox .col1 h4 {
+	font-size: 16px;
+}
+.user.dashboardBoxWrapper .dashboardBox .col1 span {
+	font-size: 30px;
 	font-weight: bold;
 	line-height: 45px;
 }
@@ -1129,7 +1154,7 @@ body.dark {
 	font-size: 12px;
 }
 .tbl-30-search .MuiOutlinedInput-root fieldset {
-	border:1px solid var(--darkText);
+	border: 1px solid var(--darkText);
 }
 .tbl-30-search .MuiOutlinedInput-root:hover fieldset {
 	border-color: var(--secondary-color);
@@ -1161,29 +1186,28 @@ body.dark {
 	color: var(--hd-color) !important;
 	font-size: 12px;
 }
-.table-container tbody tr td a{
+.table-container tbody tr td a {
 	color: var(--secondary-color);
 	text-decoration: none;
 }
-.table-container 
-.status {
-  padding: 5px 5px !important;
-  border-radius: 5px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+.table-container .status {
+	padding: 5px 5px !important;
+	border-radius: 5px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
 }
 /* Active status */
-.table-container  .status-active {
-  background-color: #e0f7fa; 
-  color: #00796b;
+.table-container .status-active {
+	background-color: #e0f7fa;
+	color: #00796b;
 }
 /* Inactive status */
-.table-container  .status-inactive {
-  background-color: #ffebee; 
-  color: #d32f2f; 
+.table-container .status-inactive {
+	background-color: #ffebee;
+	color: #d32f2f;
 }
 .table-container .status-pending {
 	color: black;
@@ -1191,33 +1215,33 @@ body.dark {
 }
 
 .table-pagination-container .MuiToolbar-root {
-  /* border-top: 1px solid #ddd;  */
-  display: flex;
-  align-items: center;
+	/* border-top: 1px solid #ddd;  */
+	display: flex;
+	align-items: center;
 }
 
 /* Dropdown for rows per page */
 .table-pagination-container .MuiTablePagination-selectLabel,
 .table-pagination-container .MuiSelect-root {
-  color: var(--darkText) !important; 
-  font-weight: bold;
-  margin-bottom: 0 !important;
+	color: var(--darkText) !important;
+	font-weight: bold;
+	margin-bottom: 0 !important;
 }
-.table-pagination-container .MuiTablePagination-select{
-	color: var(--hd-color) !important; 
+.table-pagination-container .MuiTablePagination-select {
+	color: var(--hd-color) !important;
 }
-.table-pagination-container .MuiTablePagination-select .MuiSvgIcon-root{
+.table-pagination-container .MuiTablePagination-select .MuiSvgIcon-root {
 	color: var(--accent-color);
 }
-.table-pagination-container .MuiTablePagination-actions{
+.table-pagination-container .MuiTablePagination-actions {
 	color: var(--darkText) !important;
 }
-.table-pagination-container .MuiTablePagination-actions .Mui-disabled{
+.table-pagination-container .MuiTablePagination-actions .Mui-disabled {
 	color: var(--hd-color) !important;
 	margin-bottom: 0 !important;
 }
-.table-pagination-container .MuiTablePagination-displayedRows{
-margin-bottom: 0 !important;
+.table-pagination-container .MuiTablePagination-displayedRows {
+	margin-bottom: 0 !important;
 }
 /* Page navigation buttons */
 /* .table-pagination-container .MuiTablePagination-actions button {
@@ -1225,24 +1249,131 @@ margin-bottom: 0 !important;
   transition: transform 0.2s ease;
 } */
 .table-pagination-container .MuiTablePagination-actions button:hover {
-  transform: scale(1.1); /* Slight zoom effect */
+	transform: scale(1.1); /* Slight zoom effect */
 }
 /* Active page button */
 .table-pagination-container .Mui-selected {
-  background-color: #e0f7fa; /* Highlight for the active page */
-  color: #00796b; /* Active text color */
+	background-color: #e0f7fa; /* Highlight for the active page */
+	color: #00796b; /* Active text color */
 }
-.action-cell button{
+.action-cell button {
 	background-color: var(--hd-color);
 	color: var(--lightText) !important;
 }
-.popover-content{
+.popover-content {
 	background-color: var(--light-gray) !important;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
-.popover-content button{
+.popover-content button {
 	width: 100%;
 	color: #000 !important;
+}
+.chart-container {
+	margin: 20px 0 !important;
+}
+.chart-container .first {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	gap: 10px;
+}
+.chart-container .item {
+	background-color: var(--bg-header);
+	border-radius: 10px;
+	padding: 20px;
+}
+.chart-container .first .bar {
+	flex: 8;
+}
+.chart-container .first .gauge {
+	flex: 4;
+}
+.chart-container .first .gauge .css-1w10rh9-MuiGauge-container {
+	width: 100% !important;
+	height: 100% !important;
+}
+.chart-container .first h4 {
+	color: var(--secondary-color);
+	font-size: 18px;
+}
+.chart-container .first .gauge .matrics {
+	/* display: flex; */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	/* flex-direction: column; */
+	gap: 15px;
+}
+
+.chart-container .first .gauge .matrics .data {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;
+}
+.chart-container
+	.first
+	.gauge
+	.matrics
+	.data
+	.css-p1sr87-MuiGauge-referenceArc {
+	fill: var(--bg-searchbox) !important;
+}
+.chart-container
+	.first
+	.gauge
+	.matrics
+	.data:nth-child(1)
+	.css-b9rdri-MuiGauge-referenceArc {
+	fill: var(--accent-color) !important;
+}
+.chart-container
+	.first
+	.gauge
+	.matrics
+	.data:nth-child(2)
+	.css-b9rdri-MuiGauge-referenceArc {
+	fill: var(--primary-color) !important;
+}
+.chart-container
+	.first
+	.gauge
+	.matrics
+	.data:nth-child(3)
+	.css-b9rdri-MuiGauge-referenceArc {
+	fill: var(--secondary-color) !important;
+}
+.chart-container .first .gauge .matrics .data:nth-child(3) {
+	/* background-color: red; */
+	grid-column: 1 / 3;
+}
+.chart-container .first .gauge .matrics .data text {
+	fill: var(--darkText) !important;
+}
+
+.chart-container .first .gauge .matrics .data h5 {
+	font-size: 14px;
+	margin: 0;
+	color: var(--darkText);
+	text-align: center;
+}
+
+.chart-container .first .gauge .matrics .data p {
+	font-size: 12px;
+	color: var(--darkText) !important;
+	margin: 0;
+}
+
+/* Gauge styles */
+.chart-container .first .gauge .css-1w10rh9-MuiGauge-container {
+	width: fit-content !important;
+	height: 100% !important;
+}
+
+.recharts-responsive-container .y-axis-labels .recharts-layer .recharts-text,
+.recharts-responsive-container .x-axis-labels .recharts-layer .recharts-text {
+	fill: var(--darkText) !important;
+	font-size: 12px;
+	font-weight: bold;
 }

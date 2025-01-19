@@ -76,6 +76,9 @@
 		height: 160px !important;
 		margin-right: 15px !important;
 	}
+	.user.dashboardBoxWrapper {
+		flex-direction: column !important;
+	}
 
 	.tableFooter {
 		flex-direction: column;
@@ -96,11 +99,27 @@
 	.main-container.view-product {
 		flex-wrap: wrap;
 	}
-	.price-plan .pricing-section h3{
+	.price-plan .pricing-section h3 {
 		font-size: 20px;
 	}
 	.price-plan .pricing-section .pricing-subtitle {
 		font-size: 18px;
+	}
+	.chart-container .first {
+		flex-direction: column;
+	}
+	.chart-container .first .bar,
+	.chart-container .first .gauge {
+		flex: 1;
+	}
+	.chart-container .first .gauge .matrics {
+		display: flex !important;
+		align-items: center;
+		justify-content: space-evenly;
+		gap: 15px;
+	}
+	.chart-container .first .gauge .matrics .data:nth-child(3) {
+		grid-column: 1 / 1;
 	}
 }
 @media (min-width: 320px) and (max-width: 575px) {
