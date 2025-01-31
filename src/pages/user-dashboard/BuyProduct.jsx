@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import Button from "@mui/material/Button";
 import routes from "../../routes";
-import BreadcrumbCard from "../../components/user-dashboard/BreadcrumbCard";
+import BreadcrumbCard from "../../components/BreadcrumbCard";
 const BuyProduct = () => {
 	const breadcrumbLinks = [
 		{ to: routes.userDashboard, icon: <FaHome />, label: "Dashboard" },

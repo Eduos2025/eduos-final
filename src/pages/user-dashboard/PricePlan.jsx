@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography } from "@mui/material";
-import BreadcrumbCard from "../../components/user-dashboard/BreadcrumbCard";
+import BreadcrumbCard from "../../components/BreadcrumbCard";
 import routes from "../../routes";
 import { FaHome } from "react-icons/fa";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";

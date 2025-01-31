@@ -35,6 +35,21 @@ import PricePlan from "./pages/user-dashboard/PricePlan";
 import ProductHistory from "./pages/user-dashboard/ProductHistory";
 import ManageRegProduct from "./pages/user-dashboard/ManageRegProduct";
 
+// Admin Dashboard Pages
+import AdminDashboardLayout from "./layouts/AdminDashboardLayout";
+import AdminDashboard from "./pages/admin-dashboard/AdminDashboard";
+import AddFAQ from "./pages/admin-dashboard/AddFAQ";
+import ManageFAQs from "./pages/admin-dashboard/ManageFAQ";
+import AdminResetPassword from "./pages/admin-dashboard/ResetPassword";
+import MyAdminAccount from "./pages/admin-dashboard/MyAccount";
+import AddSubscription from "./pages/admin-dashboard/AddSubscription";
+import AddTestimonial from "./pages/admin-dashboard/AddTestimonial";
+import ManageSubscriptions from "./pages/admin-dashboard/ManageSubscriptions";
+import ManageTestimonials from "./pages/admin-dashboard/ManageTestimonials";
+import AboutEdous from "./pages/admin-dashboard/AboutEdous";
+import ContactPage from "./pages/admin-dashboard/ContactEdit";
+import AddBlog from "./pages/admin-dashboard/AddBlog";
+import ManageBlog from "./pages/admin-dashboard/ManageBlog";
 const App = () => {
 	const renderRoutesWithLayout = (Layout, routes) =>
 		routes.map(({ path, element }, index) => (
@@ -74,7 +89,26 @@ const App = () => {
 					{ path: routes.ourFeatures, element: <OurFeatures /> },
 					{ path: routes.pricePlan, element: <PricePlan /> },
 					{ path: routes.productHistory, element: <ProductHistory /> },
-					{ path: routes.ManageRegisteredProduct, element: <ManageRegProduct /> },
+					{
+						path: routes.ManageRegisteredProduct,
+						element: <ManageRegProduct />,
+					},
+				])}
+				{renderRoutesWithLayout(AdminDashboardLayout, [
+					{ path: routes.adminDashboard, element: <AdminDashboard /> },
+					{ path: routes.addFAQ, element: <AddFAQ /> },
+					{ path: routes.manageFAQ, element: <ManageFAQs /> },
+					{ path: routes.adminResetPassword, element: <AdminResetPassword /> },
+					{ path: routes.adminMyAccount, element: <MyAdminAccount /> },
+					{ path: routes.addSubscription, element: <AddSubscription /> },
+					{ path: routes.addTestimony, element: <AddTestimonial /> },
+					{ path: routes.manageSubscription, element: <ManageSubscriptions /> },
+					{ path: routes.manageTestimony, element: <ManageTestimonials /> },
+					{ path: routes.aboutEdit, element: <AboutEdous /> },
+					{ path: routes.contactEdit, element: <ContactPage /> },
+					{ path: routes.addBlog, element: <AddBlog /> },
+					{ path: routes.manageBlog, element: <ManageBlog /> },
+
 				])}
 			</Routes>
 		</Router>

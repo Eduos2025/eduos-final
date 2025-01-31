@@ -6,7 +6,7 @@ import { Typography, TextField, Button } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import { deepOrange } from "@mui/material/colors";
 
-const MyAccount = () => {
+const MyAdminAccount = () => {
 	const [profilePic, setProfilePic] = useState(null);
 
 	const handleProfilePicChange = (e) => {
@@ -21,8 +21,8 @@ const MyAccount = () => {
 	};
 
 	const breadcrumbLinks = [
-		{ to: routes.userDashboard, icon: <FaHome />, label: "Dashboard" },
-		{ to: routes.userMyAccount, label: "My Account" },
+		{ to: routes.adminDashboard, icon: <FaHome />, label: "Dashboard" },
+		{ to: routes.adminResetPassword, label: "My Account" },
 	];
 
 	return (
@@ -40,7 +40,7 @@ const MyAccount = () => {
 									className="Profile-avatar"
 									sx={{ bgcolor: deepOrange[500] }}
 								>
-									QE
+									GA
 								</Avatar>
 							)}
 							<input
@@ -56,7 +56,7 @@ const MyAccount = () => {
 					</div>
 					<TextField
 						label="First Name"
-						defaultValue="Queen"
+						defaultValue="Giwa"
 						variant="outlined"
 						fullWidth
 						margin="normal"
@@ -64,7 +64,7 @@ const MyAccount = () => {
 					/>
 					<TextField
 						label="Last Name"
-						defaultValue="Ella"
+						defaultValue="abdulbasit"
 						variant="outlined"
 						fullWidth
 						margin="normal"
@@ -72,7 +72,7 @@ const MyAccount = () => {
 					/>
 					<TextField
 						label="Email Address"
-						defaultValue="quennie@example.com"
+						defaultValue="giwa3@example.com"
 						variant="outlined"
 						fullWidth
 						margin="normal"
@@ -91,4 +91,4 @@ const MyAccount = () => {
 	);
 };
 
-export default MyAccount;
+export default MyAdminAccount;

@@ -1,4 +1,4 @@
-import UserDashboardBox from "../../components/user-dashboard/UserDashboardBox";
+import AdminDashboardBox from "../../components/admin-dashboard/AdminDashboardBox";
 import { TbStarsFilled } from "react-icons/tb";
 import Button from "@mui/material/Button";
 import { FaEye, FaRegEdit } from "react-icons/fa";
@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import UserGraph from "../../components/UserGraph";
 
-const UserDashboard = () => {
+const AdminDashboard = () => {
 	return (
 		<>
 			{/* Right content wrapper */}
@@ -22,28 +22,28 @@ const UserDashboard = () => {
 					<div className="col-md-12 bottomEle">
 						{/* Dashboard box wrapper */}
 						<div className="user dashboardBoxWrapper">
-							<UserDashboardBox
+							<AdminDashboardBox
 								color={["#1da256", "#48d483"]}
 								title="All subscription"
 								value={2770}
 								Icon={FaClipboardList}
 								grow={true}
 							/>
-							<UserDashboardBox
+							<AdminDashboardBox
 								color={["#c012e2", "#eb64fe"]}
 								title="Total School User(s)"
 								value={8007}
 								Icon={FaUserGraduate}
 								grow={false}
 							/>
-							<UserDashboardBox
+							<AdminDashboardBox
 								color={["#2c78e5", "#60affa"]}
 								title="User Transaction"
 								value={17}
 								Icon={FaMoneyCheckAlt}
 								grow={false}
 							/>
-							<UserDashboardBox
+							<AdminDashboardBox
 								color={["#e1950e", "#f3cd29"]}
 								title="Active Subsccription"
 								value={277}
@@ -266,6 +266,4 @@ const UserDashboard = () => {
 	);
 };
 
-/******  fd6a42b8-af02-4da4-9447-58a00ed59c3b  *******/
-
-export default UserDashboard;
+export default AdminDashboard;

@@ -13,12 +13,12 @@ import {
 	DialogTitle,
 } from "@mui/material";
 
-const ResetPassword = () => {
+const AdminResetPassword = () => {
 	const [open, setOpen] = useState(false);
 
 	const breadcrumbLinks = [
-		{ to: routes.userDashboard, icon: <FaHome />, label: "Dashboard" },
-		{ to: routes.userResetPassword, label: "Reset Password" },
+		{ to: routes.adminDashboard, icon: <FaHome />, label: "Dashboard" },
+		{ to: routes.adminResetPassword, label: "Reset Password" },
 	];
 
 	const handleSubmit = (event) => {
@@ -103,4 +103,4 @@ const ResetPassword = () => {
 	);
 };
 
-export default ResetPassword;
+export default AdminResetPassword;

@@ -1,7 +1,7 @@
 import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import routes from "../../routes";
-import BreadcrumbCard from "../../components/user-dashboard/BreadcrumbCard";
+import BreadcrumbCard from "../../components/BreadcrumbCard";
 import { Box, Button, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -17,7 +17,7 @@ const discount = 0.0;
 const vat = 0.0;
 
 const OrderSummary = () => {
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 	const breadcrumbLinks = [
 		{ to: routes.userDashboard, icon: <FaHome />, label: "Dashboard" },
 		{ to: routes.viewProduct, label: "View Product" },
@@ -87,7 +87,7 @@ const OrderSummary = () => {
 								<th>#</th>
 								<th>Description</th>
 								<th>Subscription</th>
-                                <th>Payment Method</th>
+								<th>Payment Method</th>
 								<th>Amount</th>
 								<th>Expired Date</th>
 								<th>Total</th>
@@ -98,7 +98,7 @@ const OrderSummary = () => {
 								<td>1</td>
 								<td>Complete School Management System</td>
 								<td>Premium Subscription (12 months)</td>
-                                <td>Paystack</td>
+								<td>Paystack</td>
 								<td>N40,000</td>
 								<td>07/01/2026</td>
 								<td>N40,000</td>

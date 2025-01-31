@@ -286,10 +286,12 @@ body.dark {
 .main .sidebarWrapper .sidebar ul li button:hover {
 	background: var(--hover-color) !important;
 }
-.main .sidebarWrapper .sidebar ul li button.active {
+.main .sidebarWrapper .sidebar ul li button.active,
+.main .sidebarWrapper .sidebar ul li button.current-active {
 	color: var(--primary-light) !important;
 }
-.main .sidebarWrapper .sidebar ul li button.active * {
+.main .sidebarWrapper .sidebar ul li button.active *,
+.main .sidebarWrapper .sidebar ul li button.current-active * {
 	color: var(--primary-light) !important;
 }
 .main .sidebarWrapper .sidebar ul li button.active .arrow {
@@ -1011,7 +1013,9 @@ body.dark {
 	margin-top: 20px;
 	width: 100%;
 }
-
+.myAccountPage-form .input-field {
+	margin: 10px 0;
+}
 .myAccountPage-form .input-field input {
 	color: var(--darkText) !important;
 }
@@ -1376,4 +1380,183 @@ body.dark {
 	fill: var(--darkText) !important;
 	font-size: 12px;
 	font-weight: bold;
+}
+
+.admin-modal .modal-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	max-width: 500px;
+	background-color: var(--main-bg);
+	color: var(--darkText);
+	border-radius: 8px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+}
+.admin-modal .modal-header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.admin-modal .modal-input {
+	margin-bottom: 15px;
+}
+.admin-modal .modal-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+/* .myAccountPage-form .input-field {
+	margin: 10px 0;
+} */
+.admin-modal .modal-input input,
+.form-grid .form-input input {
+	color: var(--darkText) !important;
+}
+.admin-modal .modal-input .MuiOutlinedInput-root,
+.form-grid .form-input .MuiOutlinedInput-root {
+	fieldset {
+		border-color: var(--darkText);
+	}
+}
+.admin-modal .modal-input label,
+.admin-modal .modal-input textarea,
+.form-grid .form-input label,
+.form-grid .form-input textarea,
+.faq-form  textarea{
+	color: var(--darkText) !important;
+}
+.admin-modal .modal-input .MuiOutlinedInput-root:hover,
+.form-grid .form-input .MuiOutlinedInput-root:hover {
+	border-color: var(--secondary-color);
+}
+.admin-modal .modal-input .MuiOutlinedInput-root.Mui-focused fieldset,
+.form-grid .form-input .MuiOutlinedInput-root.Mui-focused fieldset {
+	border-color: var(--secondary-color);
+}
+.admin-modal .modal-actions button:nth-child(1) {
+	background-color: var(--primary-color) !important;
+}
+.admin-modal .modal-actions button:nth-child(2) {
+	border-color: var(--accent-color) !important;
+	color: var(--accent-color);
+	background-color: transparent !important;
+}
+.table-container tbody .actions button {
+	min-width: 35px;
+	height: 35px !important;
+	width: 35px !important;
+	margin: 0px 3px !important ;
+	border-radius: 8px !important;
+}
+.table-container tbody .actions button svg {
+	font-size: 35px !important;
+}
+.table-container tbody .actions button.secondary {
+	background-color: rgba(203, 60, 231, 0.2) !important;
+}
+.table-container tbody .actions button.success {
+	background-color: rgba(26, 159, 83, 0.2) !important;
+}
+.table-container tbody .actions button.error {
+	background-color: rgba(241, 17, 51, 0.2) !important;
+}
+.form-grid {
+	margin-top: 1rem !important;
+}
+.form-grid .features-title {
+	margin-bottom: 10px;
+}
+.form-grid .feature-input-group {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 10px;
+	align-items: center;
+}
+.form-grid .add-feature-button {
+	margin-top: 10px;
+	background-color: var(--accent-color);
+	color: var(--white);
+	transition: background-color 0.3s;
+	text-transform: capitalize;
+}
+.form-grid .remove-feature-button {
+	height: 40px;
+	background-color: red !important;
+	color: #fff;
+}
+.form-grid .remove-feature-button:hover {
+	background-color: transparent !important;
+	color: red;
+}
+.form-grid .submit-button {
+	margin-top: 10px;
+	background-color: var(--primary-color);
+	color: var(--white);
+	transition: background-color 0.3s;
+	width: 50% !important;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+}
+.success-alert{
+	color: var(--primary-color) !important;
+}
+.DeleteDialog .MuiPaper-elevation{
+	background-color: var(--main-bg) !important;
+	color: var(--darkText) !important;
+}
+.DeleteDialog .MuiPaper-elevation #alert-dialog-description{
+	color: var(--darkText) !important;
+}
+.main-container .about-edous-container {
+  width: 100%;
+  max-width: 800px;
+}
+.main-container .about-edous-container .about-edous-section  {
+  font-weight: bold;
+  margin: 10px 0;
+color: var(--primary-color) !important;
+  font-size: 1.2rem;
+}
+.main-container .about-edous-container .about-edous-edit-button{
+	background-color: var(--accent-color) !important;
+}
+.main-container .about-edous-container .about-edous-save-button{
+	background-color: var(--primary-color) !important;
+}
+.main-container .about-edous-container .about-edous-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.main-container .about-edous-container .about-edous-input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  outline: none !important;
+}
+.main-container .about-edous-container .about-edous-input .MuiOutlinedInput-root {
+  border: 1px solid var(--darkText) !important; 
+  border-radius: 8px; 
+  outline: none !important;
+}
+.main-container .about-edous-container .about-edous-input .MuiOutlinedInput-root.Mui-focused {
+  border: 2px solid var(--secondary-color) !important; 
+  outline: none !important;
+}
+.main-container .about-edous-container .about-edous-input textarea{
+  color: var(--darkText) !important;
+  outline: none !important;
+}
+.about-edous-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+	border-color: transparent; 
+	box-shadow: none; 
+}
+/* Card Actions */
+.about-edous-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
 }

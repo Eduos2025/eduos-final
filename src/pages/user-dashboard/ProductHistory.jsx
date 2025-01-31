@@ -1,4 +1,4 @@
-import BreadcrumbCard from "../../components/user-dashboard/BreadcrumbCard";
+import BreadcrumbCard from "../../components/BreadcrumbCard";
 import routes from "../../routes";
 import { FaHome } from "react-icons/fa";
 import { useState } from "react";
@@ -20,10 +20,13 @@ const ProductHistory = () => {
 	];
 	return (
 		<div className="right-content w-100">
-			<BreadcrumbCard title="Product History" breadcrumbLinks={breadcrumbLinks} />
+			<BreadcrumbCard
+				title="Product History"
+				breadcrumbLinks={breadcrumbLinks}
+			/>
 			<div className="main-container">
-                <TableWithPagination/>
-            </div>
+				<TableWithPagination />
+			</div>
 		</div>
 	);
 };

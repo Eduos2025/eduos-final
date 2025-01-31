@@ -1,4 +1,4 @@
-import BreadcrumbCard from "../../components/user-dashboard/BreadcrumbCard";
+import BreadcrumbCard from "../../components/BreadcrumbCard";
 import routes from "../../routes";
 import { FaHome } from "react-icons/fa";
 import { useState } from "react";
@@ -17,124 +17,128 @@ import {
 import { GoDotFill } from "react-icons/go";
 import { PiDotsThreeOutlineBold } from "react-icons/pi";
 const ManageRegProduct = () => {
-    const breadcrumbLinks = [
-			{ to: routes.userDashboard, icon: <FaHome />, label: "Dashboard" },
-			{ to: routes.ManageRegisteredProduct, label: "Manage Registered Product" },
-		];
-  return (
-    <div className="right-content w-100">
-                <BreadcrumbCard title="Manage Registered Product" breadcrumbLinks={breadcrumbLinks} />
-                <div className="main-container"><TableWithPagination/></div>
-            </div>
-  )
-}
+	const breadcrumbLinks = [
+		{ to: routes.userDashboard, icon: <FaHome />, label: "Dashboard" },
+		{ to: routes.ManageRegisteredProduct, label: "Manage Registered Product" },
+	];
+	return (
+		<div className="right-content w-100">
+			<BreadcrumbCard
+				title="Manage Registered Product"
+				breadcrumbLinks={breadcrumbLinks}
+			/>
+			<div className="main-container">
+				<TableWithPagination />
+			</div>
+		</div>
+	);
+};
 
-export default ManageRegProduct
-
+export default ManageRegProduct;
 
 const TableWithPagination = () => {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
 
-const data = [
-	{
-		sn: 1,
-		schoolID: 101,
-		url: "https://example.com/school-alpha",
-		registeredBy: "admin1@eduos.com",
-		status: "Active",
-		insightLink: "https://example.com/insight-alpha",
-	},
-	{
-		sn: 2,
-		schoolID: 102,
-		url: "https://example.com/school-beta",
-		registeredBy: "eduos@gmail.com",
-		status: "Inactive",
-		insightLink: "https://example.com/insight-beta",
-	},
-	{
-		sn: 3,
-		schoolID: 103,
-		url: "https://example.com/school-gamma",
-		registeredBy: "admin2@eduos.com",
-		status: "Active",
-		insightLink: "https://example.com/insight-gamma",
-	},
-	{
-		sn: 4,
-		schoolID: 104,
-		url: "https://example.com/school-delta",
-		registeredBy: "eduos@gmail.com",
-		status: "Pending",
-		insightLink: "https://example.com/insight-delta",
-	},
-	{
-		sn: 5,
-		schoolID: 105,
-		url: "https://example.com/school-epsilon",
-		registeredBy: "admin3@eduos.com",
-		status: "Active",
-		insightLink: "https://example.com/insight-epsilon",
-	},
-	{
-		sn: 6,
-		schoolID: 106,
-		url: "https://example.com/school-zeta",
-		registeredBy: "eduos@gmail.com",
-		status: "Inactive",
-		insightLink: "https://example.com/insight-zeta",
-	},
-	{
-		sn: 7,
-		schoolID: 107,
-		url: "https://example.com/school-eta",
-		registeredBy: "admin4@eduos.com",
-		status: "Active",
-		insightLink: "https://example.com/insight-eta",
-	},
-	{
-		sn: 8,
-		schoolID: 108,
-		url: "https://example.com/school-theta",
-		registeredBy: "eduos@gmail.com",
-		status: "Pending",
-		insightLink: "https://example.com/insight-theta",
-	},
-	{
-		sn: 9,
-		schoolID: 109,
-		url: "https://example.com/school-iota",
-		registeredBy: "admin5@eduos.com",
-		status: "Active",
-		insightLink: "https://example.com/insight-iota",
-	},
-	{
-		sn: 10,
-		schoolID: 110,
-		url: "https://example.com/school-kappa",
-		registeredBy: "eduos@gmail.com",
-		status: "Inactive",
-		insightLink: "https://example.com/insight-kappa",
-	},
-	{
-		sn: 11,
-		schoolID: 111,
-		url: "https://example.com/school-lambda",
-		registeredBy: "admin6@eduos.com",
-		status: "Active",
-		insightLink: "https://example.com/insight-lambda",
-	},
-	{
-		sn: 12,
-		schoolID: 112,
-		url: "https://example.com/school-mu",
-		registeredBy: "eduos@gmail.com",
-		status: "Pending",
-		insightLink: "https://example.com/insight-mu",
-	},
-];
+	const data = [
+		{
+			sn: 1,
+			schoolID: 101,
+			url: "https://example.com/school-alpha",
+			registeredBy: "admin1@eduos.com",
+			status: "Active",
+			insightLink: "https://example.com/insight-alpha",
+		},
+		{
+			sn: 2,
+			schoolID: 102,
+			url: "https://example.com/school-beta",
+			registeredBy: "eduos@gmail.com",
+			status: "Inactive",
+			insightLink: "https://example.com/insight-beta",
+		},
+		{
+			sn: 3,
+			schoolID: 103,
+			url: "https://example.com/school-gamma",
+			registeredBy: "admin2@eduos.com",
+			status: "Active",
+			insightLink: "https://example.com/insight-gamma",
+		},
+		{
+			sn: 4,
+			schoolID: 104,
+			url: "https://example.com/school-delta",
+			registeredBy: "eduos@gmail.com",
+			status: "Pending",
+			insightLink: "https://example.com/insight-delta",
+		},
+		{
+			sn: 5,
+			schoolID: 105,
+			url: "https://example.com/school-epsilon",
+			registeredBy: "admin3@eduos.com",
+			status: "Active",
+			insightLink: "https://example.com/insight-epsilon",
+		},
+		{
+			sn: 6,
+			schoolID: 106,
+			url: "https://example.com/school-zeta",
+			registeredBy: "eduos@gmail.com",
+			status: "Inactive",
+			insightLink: "https://example.com/insight-zeta",
+		},
+		{
+			sn: 7,
+			schoolID: 107,
+			url: "https://example.com/school-eta",
+			registeredBy: "admin4@eduos.com",
+			status: "Active",
+			insightLink: "https://example.com/insight-eta",
+		},
+		{
+			sn: 8,
+			schoolID: 108,
+			url: "https://example.com/school-theta",
+			registeredBy: "eduos@gmail.com",
+			status: "Pending",
+			insightLink: "https://example.com/insight-theta",
+		},
+		{
+			sn: 9,
+			schoolID: 109,
+			url: "https://example.com/school-iota",
+			registeredBy: "admin5@eduos.com",
+			status: "Active",
+			insightLink: "https://example.com/insight-iota",
+		},
+		{
+			sn: 10,
+			schoolID: 110,
+			url: "https://example.com/school-kappa",
+			registeredBy: "eduos@gmail.com",
+			status: "Inactive",
+			insightLink: "https://example.com/insight-kappa",
+		},
+		{
+			sn: 11,
+			schoolID: 111,
+			url: "https://example.com/school-lambda",
+			registeredBy: "admin6@eduos.com",
+			status: "Active",
+			insightLink: "https://example.com/insight-lambda",
+		},
+		{
+			sn: 12,
+			schoolID: 112,
+			url: "https://example.com/school-mu",
+			registeredBy: "eduos@gmail.com",
+			status: "Pending",
+			insightLink: "https://example.com/insight-mu",
+		},
+	];
 
 	const handleSearch = (event) => {
 		setSearchTerm(event.target.value);
@@ -161,18 +165,18 @@ const data = [
 		page * rowsPerPage + rowsPerPage
 	);
 
- const [anchorEl, setAnchorEl] = useState(null);
+	const [anchorEl, setAnchorEl] = useState(null);
 
- const handleClick = (event) => {
+	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
- };
+	};
 
- const handleClose = () => {
+	const handleClose = () => {
 		setAnchorEl(null);
- };
+	};
 
- const open = Boolean(anchorEl);
- const id = open ? "simple-popover" : undefined;
+	const open = Boolean(anchorEl);
+	const id = open ? "simple-popover" : undefined;
 	return (
 		<>
 			<div
