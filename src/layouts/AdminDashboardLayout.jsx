@@ -4,6 +4,7 @@ import AdminSidebar from "../components/admin-dashboard/AdminSidebar";
 import "../css/dashboard.css";
 import "../css/responsive.css";
 import PropTypes from "prop-types";
+import SEO from "../components/SEO";
 
 const Mycontext = createContext();
 
@@ -69,6 +70,10 @@ const AdminDashboardLayout = ({ children }) => {
 
 	return (
 		<Mycontext.Provider value={values}>
+			<SEO
+				title="Admin Dashboard | Eduos"
+				favicon="/public/favicons/EDUOSlogo.png"
+			/>
 			<div className="dashboard">
 				<AdminHeader />
 				<div className="main d-flex">

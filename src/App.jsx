@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import routes from "./routes";
 import ScrollToTop from "./components/ScrollToTop";
+import SEO from "./components/SEO";
 
 // Main Site Pages
 import Home from "./pages/main-site/Home";
@@ -50,6 +52,10 @@ import AboutEdous from "./pages/admin-dashboard/AboutEdous";
 import ContactPage from "./pages/admin-dashboard/ContactEdit";
 import AddBlog from "./pages/admin-dashboard/AddBlog";
 import ManageBlog from "./pages/admin-dashboard/ManageBlog";
+
+//school management system
+import Homepage from "./pages/school-management/Homepage";
+
 const App = () => {
 	const renderRoutesWithLayout = (Layout, routes) =>
 		routes.map(({ path, element }, index) => (
@@ -57,61 +63,158 @@ const App = () => {
 		));
 
 	return (
-		<Router>
-			<ScrollToTop />
-			<Routes>
-				{/* Main Site Routes */}
-				<Route path={routes.home} element={<Home />} />
-				<Route path={routes.contact} element={<Contact />} />
-				<Route path={routes.login} element={<Login />} />
-				<Route path={routes.register} element={<Register />} />
-				<Route path={routes.about} element={<About />} />
-				<Route path={routes.blog} element={<Blog />} />
-				<Route path={routes.blogPost(":title")} element={<BlogPost />} />
+		<HelmetProvider>
+			<Router>
+				<ScrollToTop />
+				<Routes>
+					{/* Main Site Routes */}
+					<Route
+						path={routes.home}
+						element={
+							<>
+								<SEO
+									title="Home | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<Home />
+							</>
+						}
+					/>
+					<Route
+						path={routes.contact}
+						element={
+							<>
+								<SEO
+									title="Contact Us | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<Contact />
+							</>
+						}
+					/>
+					<Route
+						path={routes.login}
+						element={
+							<>
+								<SEO
+									title="Login | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<Login />
+							</>
+						}
+					/>
+					<Route
+						path={routes.register}
+						element={
+							<>
+								<SEO
+									title="Register | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<Register />
+							</>
+						}
+					/>
+					<Route
+						path={routes.about}
+						element={
+							<>
+								<SEO
+									title="About Us | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<About />
+							</>
+						}
+					/>
+					<Route
+						path={routes.blog}
+						element={
+							<>
+								<SEO
+									title="Blog | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<Blog />
+							</>
+						}
+					/>
+					<Route
+						path={routes.blogPost(":title")}
+						element={
+							<>
+								<SEO
+									title="Blog Post | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<BlogPost />
+							</>
+						}
+					/>
 
-				{/* Dashboard Routes */}
-				{renderRoutesWithLayout(DashboardLayout, [
-					{ path: routes.dashboard, element: <Dashboard /> },
-					{ path: routes.newPage, element: <Newpage /> },
-				])}
+					{/* Dashboard Routes */}
+					{renderRoutesWithLayout(DashboardLayout, [
+						{ path: routes.dashboard, element: <Dashboard /> },
+						{ path: routes.newPage, element: <Newpage /> },
+					])}
 
-				{/* User Dashboard Routes */}
-				{renderRoutesWithLayout(UserDashboardLayout, [
-					{ path: routes.userDashboard, element: <UserDashboard /> },
-					{ path: routes.buyProduct, element: <BuyProduct /> },
-					{ path: routes.viewProduct, element: <ViewProduct /> },
-					{ path: routes.orderSummary, element: <OrderSummary /> },
-					{ path: routes.paymentSuccess, element: <PaymentSuccess /> },
-					{ path: routes.Congrats, element: <Congrats /> },
-					{ path: routes.userNotification, element: <Notification /> },
-					{ path: routes.userMyAccount, element: <MyAccount /> },
-					{ path: routes.userResetPassword, element: <ResetPassword /> },
-					{ path: routes.ourFeatures, element: <OurFeatures /> },
-					{ path: routes.pricePlan, element: <PricePlan /> },
-					{ path: routes.productHistory, element: <ProductHistory /> },
-					{
-						path: routes.ManageRegisteredProduct,
-						element: <ManageRegProduct />,
-					},
-				])}
-				{renderRoutesWithLayout(AdminDashboardLayout, [
-					{ path: routes.adminDashboard, element: <AdminDashboard /> },
-					{ path: routes.addFAQ, element: <AddFAQ /> },
-					{ path: routes.manageFAQ, element: <ManageFAQs /> },
-					{ path: routes.adminResetPassword, element: <AdminResetPassword /> },
-					{ path: routes.adminMyAccount, element: <MyAdminAccount /> },
-					{ path: routes.addSubscription, element: <AddSubscription /> },
-					{ path: routes.addTestimony, element: <AddTestimonial /> },
-					{ path: routes.manageSubscription, element: <ManageSubscriptions /> },
-					{ path: routes.manageTestimony, element: <ManageTestimonials /> },
-					{ path: routes.aboutEdit, element: <AboutEdous /> },
-					{ path: routes.contactEdit, element: <ContactPage /> },
-					{ path: routes.addBlog, element: <AddBlog /> },
-					{ path: routes.manageBlog, element: <ManageBlog /> },
+					{/* User Dashboard Routes */}
+					{renderRoutesWithLayout(UserDashboardLayout, [
+						{ path: routes.userDashboard, element: <UserDashboard /> },
+						{ path: routes.buyProduct, element: <BuyProduct /> },
+						{ path: routes.viewProduct, element: <ViewProduct /> },
+						{ path: routes.orderSummary, element: <OrderSummary /> },
+						{ path: routes.paymentSuccess, element: <PaymentSuccess /> },
+						{ path: routes.Congrats, element: <Congrats /> },
+						{ path: routes.userNotification, element: <Notification /> },
+						{ path: routes.userMyAccount, element: <MyAccount /> },
+						{ path: routes.userResetPassword, element: <ResetPassword /> },
+						{ path: routes.ourFeatures, element: <OurFeatures /> },
+						{ path: routes.pricePlan, element: <PricePlan /> },
+						{ path: routes.productHistory, element: <ProductHistory /> },
+						{
+							path: routes.ManageRegisteredProduct,
+							element: <ManageRegProduct />,
+						},
+					])}
+					{renderRoutesWithLayout(AdminDashboardLayout, [
+						{ path: routes.adminDashboard, element: <AdminDashboard /> },
+						{ path: routes.addFAQ, element: <AddFAQ /> },
+						{ path: routes.manageFAQ, element: <ManageFAQs /> },
+						{
+							path: routes.adminResetPassword,
+							element: <AdminResetPassword />,
+						},
+						{ path: routes.adminMyAccount, element: <MyAdminAccount /> },
+						{ path: routes.addSubscription, element: <AddSubscription /> },
+						{ path: routes.addTestimony, element: <AddTestimonial /> },
+						{
+							path: routes.manageSubscription,
+							element: <ManageSubscriptions />,
+						},
+						{ path: routes.manageTestimony, element: <ManageTestimonials /> },
+						{ path: routes.aboutEdit, element: <AboutEdous /> },
+						{ path: routes.contactEdit, element: <ContactPage /> },
+						{ path: routes.addBlog, element: <AddBlog /> },
+						{ path: routes.manageBlog, element: <ManageBlog /> },
+					])}
 
-				])}
-			</Routes>
-		</Router>
+					<Route
+						path={routes.schoolManagement}
+						element={
+							<>
+								<SEO
+									title="Home | My Website"
+									favicon="/public/favicons/abuad.png"
+								/>
+								<Homepage />
+							</>
+						}
+					/>
+				</Routes>
+			</Router>
+		</HelmetProvider>
 	);
 };
 

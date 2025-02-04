@@ -36,6 +36,7 @@ const routes = {
 	contactEdit: "/contact/edit",
 	addBlog: "/add-blog",
 	manageBlog: "/manage-blog",
+	schoolManagement: "/school-management",
 };
 
 export default routes;

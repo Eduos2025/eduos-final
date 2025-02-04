@@ -4,6 +4,7 @@ import Sidebar from "../components/user-dashboard/Sidebar";
 import "../css/dashboard.css";
 import "../css/responsive.css";
 import PropTypes from "prop-types";
+import SEO from "../components/SEO";
 
 const Mycontext = createContext();
 
@@ -52,8 +53,8 @@ const UserDashboardLayout = ({ children }) => {
 		setIsOpenNav(true);
 	};
 	const closeNav = () => {
-        setIsOpenNav(false);
-    };
+		setIsOpenNav(false);
+	};
 
 	const values = {
 		isToggleSidebar,
@@ -68,6 +69,10 @@ const UserDashboardLayout = ({ children }) => {
 
 	return (
 		<Mycontext.Provider value={values}>
+			<SEO
+				title="User Dashboard | Eduos"
+				favicon="/public/favicons/EDUOSlogo.png"
+			/>
 			<div className="dashboard">
 				<Header />
 				<div className="main d-flex">
