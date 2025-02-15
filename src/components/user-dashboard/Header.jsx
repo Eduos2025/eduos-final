@@ -156,9 +156,12 @@ const Header = () => {
 									</ListItemIcon>
 									My Account
 								</MenuItem>
-								<MenuItem onClick={() => {handleCloseMyAccDrop();
-									navigate(routes.userResetPassword);
-								}}>
+								<MenuItem
+									onClick={() => {
+										handleCloseMyAccDrop();
+										navigate(routes.userResetPassword);
+									}}
+								>
 									<ListItemIcon>
 										<IoShieldHalfOutline />
 									</ListItemIcon>

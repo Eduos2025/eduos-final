@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import Sidebar from "../components/user-dashboard/Sidebar";
-import Header from "../components/user-dashboard/header";
+import Header from "../components/user-dashboard/Header";
 import "../css/dashboard.css";
 import "../css/responsive.css";
 import PropTypes from "prop-types";
