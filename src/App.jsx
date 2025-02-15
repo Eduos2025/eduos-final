@@ -55,6 +55,13 @@ import ManageBlog from "./pages/admin-dashboard/ManageBlog";
 
 //school management system
 import Homepage from "./pages/school-management/Homepage";
+import SchoolContact from "./pages/school-management/SchoolContact";
+import SchoolAboutPage from "./pages/school-management/SchoolAbout";
+import StaffPage from "./pages/school-management/StaffPage";
+import PortalLogin from "./pages/school-management/PortalLogin";
+import ApplyForm from "./pages/school-management/apply/ApplyForm";
+import AddStudentBio from "./pages/school-management/apply/AddStudentBio";
+import EduBackground from "./pages/school-management/apply/EduBackground";
 
 const App = () => {
 	const renderRoutesWithLayout = (Layout, routes) =>
@@ -209,6 +216,90 @@ const App = () => {
 									favicon="/public/favicons/abuad.png"
 								/>
 								<Homepage />
+							</>
+						}
+					/>
+					<Route
+						path={routes.schoolContact}
+						element={
+							<>
+								<SEO
+									title="Contact | My Website"
+									favicon="/public/favicons/abuad.png"
+								/>
+								<SchoolContact />
+							</>
+						}
+					/>
+					<Route
+						path={routes.schoolAbout}
+						element={
+							<>
+								<SEO
+									title="About | My Website"
+									favicon="/public/favicons/abuad.png"
+								/>
+								<SchoolAboutPage />
+							</>
+						}
+					/>
+					<Route
+						path={routes.schoolStaff}
+						element={
+							<>
+								<SEO
+									title="staff | My Website"
+									favicon="/public/favicons/abuad.png"
+								/>
+								<StaffPage />
+							</>
+						}
+					/>
+					<Route
+						path={routes.schoolPortal}
+						element={
+							<>
+								<SEO
+									title="Portal Login | My Website"
+									favicon="/public/favicons/abuad.png"
+								/>
+								<PortalLogin />
+							</>
+						}
+					/>
+					<Route
+						path={routes.schoolApply}
+						element={
+							<>
+								<SEO
+									title="Apply | My Website"
+									favicon="/public/favicons/abuad.png"
+								/>
+								<ApplyForm />
+							</>
+						}
+					/>
+					<Route
+						path={routes.studentBio}
+						element={
+							<>
+								<SEO
+									title="Add Student Bio"
+									favicon="/public/favicons/abuad.png"
+								/>
+								<AddStudentBio />
+							</>
+						}
+					/>
+					<Route
+						path={routes.studentEdulevel}
+						element={
+							<>
+								<SEO
+									title="Add Student Bio"
+									favicon="/public/favicons/abuad.png"
+								/>
+								<EduBackground />
 							</>
 						}
 					/>

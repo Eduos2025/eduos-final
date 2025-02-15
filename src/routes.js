@@ -37,6 +37,13 @@ const routes = {
 	addBlog: "/add-blog",
 	manageBlog: "/manage-blog",
 	schoolManagement: "/school-management",
+	schoolContact: "/school-management/contact",
+	schoolAbout: "/school-management/about",
+	schoolStaff: "/school-management/staff",
+	schoolPortal: "/school-management/portal",
+	schoolApply: "/school-management/apply",
+	studentBio: "/school-management/apply/student-bio",
+	studentEdulevel: "/school-management/apply/education-level",
 };
 
 export default routes;
