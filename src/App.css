@@ -195,6 +195,9 @@
 	.main-header .auth {
 		display: none;
 	}
+	.main-header{
+		padding: 1rem 1rem;
+	}
 	.main-header header {
 		padding: 1rem 0.75rem;
 	}

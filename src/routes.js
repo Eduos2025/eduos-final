@@ -1,6 +1,10 @@
 const routes = {
 	home: "/",
 	contact: "/contact",
+	verifyOTP: "/verify-otp",
+	forgetPassword: "/forget-password",
+	passwordresetconfirmation: "/password-reset-confirmation",
+	resetPassword:"/reset-password",
 	login: "/login",
 	register: "/register",
 	about: "/about",

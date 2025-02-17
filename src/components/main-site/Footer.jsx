@@ -88,7 +88,7 @@ const Footer = () => {
 					</Link>
 				</div>
 			</div>
-				<p className="copyright">© Copyright Akara Insight. All Rights Reserved</p>
+				<p className="copyright">© Copyright Edous. All Rights Reserved</p>
 		</footer>
 	);
 };

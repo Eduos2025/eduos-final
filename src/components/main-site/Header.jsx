@@ -139,9 +139,7 @@ const Header = () => {
 
 						<Link
 							to="#"
-							className={`nav-link ${
-								isActive("#") ? "active" : ""
-							}`}
+							className={`nav-link ${isActive("#") ? "active" : ""}`}
 						>
 							Demo Home Page
 						</Link>
@@ -200,7 +198,7 @@ const Header = () => {
 					About
 				</Link>
 				<Link
-					to={routes}
+					to={routes.contact}
 					className={`nav-link ${
 						location.pathname === "/contact" ? "mobileactive" : ""
 					}`}
@@ -208,7 +206,7 @@ const Header = () => {
 					Contact
 				</Link>
 				<Link
-					to={routes}
+					to={routes.blog}
 					className={`nav-link ${isActive("/blog") ? "mobileactive" : ""}`}
 				>
 					Blog
@@ -248,9 +246,7 @@ const Header = () => {
 						</div>
 						<Link
 							to="#"
-							className={`nav-link ${
-								isActive("#") ? "mobileactive" : ""
-							}`}
+							className={`nav-link ${isActive("#") ? "mobileactive" : ""}`}
 						>
 							Demo Home Page
 						</Link>
@@ -272,17 +268,13 @@ const Header = () => {
 					>
 						<Link
 							to="#"
-							className={`nav-link ${
-								isActive("#") ? "mobileactive" : ""
-							}`}
+							className={`nav-link ${isActive("#") ? "mobileactive" : ""}`}
 						>
 							How to install Akara Insight
 						</Link>
 						<Link
 							to="#"
-							className={`nav-link ${
-								isActive("#") ? "mobileactive" : ""
-							}`}
+							className={`nav-link ${isActive("#") ? "mobileactive" : ""}`}
 						>
 							How to use Akara Insight
 						</Link>

@@ -3,7 +3,7 @@ import { BiSolidDashboard } from "react-icons/bi";
 import { FaAngleRight } from "react-icons/fa6";
 import { MdShoppingCart } from "react-icons/md";
 import { BiPlayCircle } from "react-icons/bi";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate  } from "react-router-dom";
 import { useState } from "react";
 import { IoMdLock, IoMdPricetags } from "react-icons/io";
 import { FaServicestack } from "react-icons/fa";
@@ -187,16 +187,8 @@ const Sidebar = ({ onClose }) => {
 			</ul>
 
 			{/* Logout */}
-			<div className="logoutWrapper">
-				<div className="LogoutBox">
-					<Button variant="contained">
-						<div className="icon">
-							<IoMdLock />
-						</div>
-						Logout
-					</Button>
-				</div>
-			</div>
+			<Logout/>
+			
 		</div>
 	);
 };
@@ -204,4 +196,55 @@ const Sidebar = ({ onClose }) => {
 export default Sidebar;
 Sidebar.propTypes = {
     onClose: PropTypes.func.isRequired, // onClose should be a required function
+};
+
+const Logout = () => {
+	const navigate = useNavigate();
+
+	const handleLogout = async () => {
+		const authToken = localStorage.getItem("authtoken");
+
+		if (!authToken) {
+			console.error("No auth token found.");
+			navigate(routes.login);
+			return;
+		}
+
+		try {
+			const response = await fetch("https://api.eduos.com.ng/api/logout", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${authToken}`,
+				},
+			});
+
+			if (!response.ok) {
+				console.error("Logout failed:", response.statusText);
+				return;
+			}
+
+			// Clear user data from localStorage
+			localStorage.removeItem("authtoken");
+			localStorage.removeItem("role");
+
+			// Redirect to login
+			navigate(routes.login);
+		} catch (error) {
+			console.error("Error during logout:", error);
+		}
+	};
+
+	return (
+		<div className="logoutWrapper">
+			<div className="LogoutBox">
+				<Button variant="contained" onClick={handleLogout}>
+					<div className="icon">
+						<IoMdLock />
+					</div>
+					Logout
+				</Button>
+			</div>
+		</div>
+	);
 };

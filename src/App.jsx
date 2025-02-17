@@ -15,6 +15,8 @@ import Register from "./pages/Register";
 import About from "./pages/main-site/About";
 import Blog from "./pages/main-site/Blog";
 import BlogPost from "./pages/main-site/BlogPost";
+import VerifyOtp from "./pages/VerifyOtp";
+import ResetOTPPassword from "./pages/ResetPassword";
 
 // Dashboard Pages
 import DashboardLayout from "./layouts/DashboardLayout";
@@ -62,6 +64,9 @@ import PortalLogin from "./pages/school-management/PortalLogin";
 import ApplyForm from "./pages/school-management/apply/ApplyForm";
 import AddStudentBio from "./pages/school-management/apply/AddStudentBio";
 import EduBackground from "./pages/school-management/apply/EduBackground";
+import ForgetPassword from "./pages/ForgetPassword";
+import ResetOtp from "./pages/ResetOtp";
+import ProtectedRoute from "./ProtectedRoute.jsx";
 
 const App = () => {
 	const renderRoutesWithLayout = (Layout, routes) =>
@@ -108,6 +113,54 @@ const App = () => {
 									favicon="/public/favicons/EDUOSlogo.png"
 								/>
 								<Login />
+							</>
+						}
+					/>
+					<Route
+						path={routes.verifyOTP}
+						element={
+							<>
+								<SEO
+									title="Verify OTP | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<VerifyOtp />
+							</>
+						}
+					/>
+					<Route
+						path={routes.forgetPassword}
+						element={
+							<>
+								<SEO
+									title="Forget Password | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<ForgetPassword />
+							</>
+						}
+					/>
+					<Route
+						path={routes.passwordresetconfirmation}
+						element={
+							<>
+								<SEO
+									title="Resend Otp | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<ResetOtp />
+							</>
+						}
+					/>
+					<Route
+						path={routes.resetPassword}
+						element={
+							<>
+								<SEO
+									title="Resent Password | Eduos"
+									favicon="/public/favicons/EDUOSlogo.png"
+								/>
+								<ResetOTPPassword />
 							</>
 						}
 					/>
@@ -166,25 +219,27 @@ const App = () => {
 						{ path: routes.newPage, element: <Newpage /> },
 					])}
 
-					{/* User Dashboard Routes */}
-					{renderRoutesWithLayout(UserDashboardLayout, [
-						{ path: routes.userDashboard, element: <UserDashboard /> },
-						{ path: routes.buyProduct, element: <BuyProduct /> },
-						{ path: routes.viewProduct, element: <ViewProduct /> },
-						{ path: routes.orderSummary, element: <OrderSummary /> },
-						{ path: routes.paymentSuccess, element: <PaymentSuccess /> },
-						{ path: routes.Congrats, element: <Congrats /> },
-						{ path: routes.userNotification, element: <Notification /> },
-						{ path: routes.userMyAccount, element: <MyAccount /> },
-						{ path: routes.userResetPassword, element: <ResetPassword /> },
-						{ path: routes.ourFeatures, element: <OurFeatures /> },
-						{ path: routes.pricePlan, element: <PricePlan /> },
-						{ path: routes.productHistory, element: <ProductHistory /> },
-						{
-							path: routes.ManageRegisteredProduct,
-							element: <ManageRegProduct />,
-						},
-					])}
+					<Route element={<ProtectedRoute allowedRoles={["user"]} />}>
+						{/* User Dashboard Routes */}
+						{renderRoutesWithLayout(UserDashboardLayout, [
+							{ path: routes.userDashboard, element: <UserDashboard /> },
+							{ path: routes.buyProduct, element: <BuyProduct /> },
+							{ path: routes.viewProduct, element: <ViewProduct /> },
+							{ path: routes.orderSummary, element: <OrderSummary /> },
+							{ path: routes.paymentSuccess, element: <PaymentSuccess /> },
+							{ path: routes.Congrats, element: <Congrats /> },
+							{ path: routes.userNotification, element: <Notification /> },
+							{ path: routes.userMyAccount, element: <MyAccount /> },
+							{ path: routes.userResetPassword, element: <ResetPassword /> },
+							{ path: routes.ourFeatures, element: <OurFeatures /> },
+							{ path: routes.pricePlan, element: <PricePlan /> },
+							{ path: routes.productHistory, element: <ProductHistory /> },
+							{
+								path: routes.ManageRegisteredProduct,
+								element: <ManageRegProduct />,
+							},
+						])}
+					</Route>
 					{renderRoutesWithLayout(AdminDashboardLayout, [
 						{ path: routes.adminDashboard, element: <AdminDashboard /> },
 						{ path: routes.addFAQ, element: <AddFAQ /> },

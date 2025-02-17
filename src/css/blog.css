@@ -36,24 +36,24 @@
 	justify-content: space-between;
 }
 .blog-section .blog-card .blog-metadata div {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 .blog-section .blog-card h3 {
 	padding: 0rem 1rem;
-    line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+	line-clamp: 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
 }
 .blog-section .blog-card button {
 	margin: 1rem;
 }
-.blog-section .blog-card a{
-    text-decoration: none;
+.blog-section .blog-card a {
+	text-decoration: none;
 }
 .animated-button {
 	position: relative;
@@ -130,10 +130,47 @@
 	height: 220px;
 	opacity: 1;
 }
+.blog-detail {
+	padding: 1rem;
+}
+.blog-detail img {
+	width: 100%;
+	border-radius: 18px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.blog-detail .blog-content {
+	display: flex;
+	align-items: flex-start;
+	gap: 3rem;
+	margin-top: 1rem;
+}
+.blog-detail .blog-content > div {
+	flex: 1;
+}
+.blog-detail h1 {
+	color: var(--secondary-color);
+	margin-bottom: 1rem;
+	font-size: 22px;
+}
+.blog-detail .blog-metadata {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.blog-detail .blog-metadata div {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.blog-detail .blog-metadata div svg {
+	color: var(--secondary-color);
+}
 @media (max-width: 768px) {
-    .blog{
-        padding: 1rem;
-    }
+	.blog {
+		padding: 1rem;
+	}
 	.blog h1 {
 		font-size: 28px;
 	}
@@ -152,41 +189,12 @@
 		/* padding: 6px 24px; */
 		font-size: 14px;
 	}
-}
-.blog-detail{
-    padding: 1rem;
-}
-.blog-detail img{
-width: 100%;
-border-radius: 18px;
-box-shadow:  0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.blog-detail .blog-content{
-    display: flex;
-    align-items: flex-start;
-    gap: 3rem;
-    margin-top: 1rem
-    ;
-}
-.blog-detail .blog-content > div{
-    flex: 1;
-}
-.blog-detail h1{
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-.blog-detail .blog-metadata{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-.blog-detail .blog-metadata div{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.blog-detail .blog-metadata div svg{
-    color: var(--secondary-color);
+	.blog-detail h1 {
+		font-size: 16px;
+		font-weight: 700;
+	}
+	.blog-detail .blog-content {
+		flex-direction: column;
+		gap: 1rem;
+	}
 }
