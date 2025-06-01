@@ -10,9 +10,11 @@ const PortalLogin = () => {
 			case "student":
 				return "Admission Number:";
 			case "teacher":
-			case "accountant":
-			case "admin":
 				return "Staff ID:";
+			case "accountant":
+				return "Accountant ID:";
+			case "admin":
+				return "Admin ID:";
 			default:
 				return "User ID:";
 		}
