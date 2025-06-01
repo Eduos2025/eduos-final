@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
-import routes from "../../routes";
+import { useAuth } from "../../context/AuthContext"; // Make sure this path is correct
+import routes from "../../routes"; // Check if this path is correct
 import { toast } from "sonner";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { UserRole } from "@/types";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"; // Ensure this import path is correct
+import { UserRole } from "@/types"; // Ensure UserRole is defined correctly
 
 const PortalLogin = () => {
   const navigate = useNavigate();
