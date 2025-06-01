@@ -318,7 +318,7 @@ const App = () => {
 									title="Portal Login | My Website"
 									favicon="/public/favicons/abuad.png"
 								/>
-								<Login />
+								<PortalLogin />
 							</>
 						}
 					/>
