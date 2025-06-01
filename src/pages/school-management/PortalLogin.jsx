@@ -1,144 +1,97 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
-type UserRole = "student" | "teacher" | "accountant" | "admin";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import routes from "../../routes";
 
 const PortalLogin = () => {
-	const navigate = useNavigate();
-	const [role, setRole] = useState<UserRole>("student");
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [role, setRole] = useState("student"); // default selected role
 
-	const defaultCredentials = {
-		student: { email: "student@example.com", password: "123456" },
-		teacher: { email: "teacher@example.com", password: "teacher123" },
-		accountant: { email: "accountant@example.com", password: "account123" },
-		admin: { email: "admin@example.com", password: "admin123" }
+	const getRoleLabel = () => {
+		switch (role) {
+			case "student":
+				return "Admission Number:";
+			case "teacher":
+			case "accountant":
+			case "admin":
+				return "Staff ID:";
+			default:
+				return "User ID:";
+		}
 	};
 
-	useEffect(() => {
-		const creds = defaultCredentials[role];
-		setEmail(creds.email);
-		setPassword(creds.password);
-	}, [role]);
-
-	const handleLogin = (e: React.FormEvent) => {
-		e.preventDefault();
-		if (!email || !password) {
-			alert("Please fill in both fields.");
-			return;
+	const getRolePlaceholder = () => {
+		switch (role) {
+			case "student":
+				return "Enter your admission number";
+			case "teacher":
+				return "Enter your teacher ID";
+			case "accountant":
+				return "Enter your accountant ID";
+			case "admin":
+				return "Enter your admin ID";
+			default:
+				return "Enter your ID";
 		}
-		alert(`Logged in as ${role}`);
-		navigate(`/${role}`);
+	};
+
+	const getTitle = () => {
+		return `${role.charAt(0).toUpperCase() + role.slice(1)} Login`;
 	};
 
 	return (
-		<div style={styles.container}>
-			<div style={styles.card}>
-				<h2 style={styles.title}>Login to EDUOS</h2>
+		<div className="portal-container">
+			<div className="portal-card">
+				<Link to={routes.schoolManagement} className="logo">
+					<img src="/uibadan.jpeg" alt="Logo" width={"30%"} />
+				</Link>
 
-				<div style={styles.tabs}>
-					{(["student", "teacher", "accountant", "admin"] as UserRole[]).map((r) => (
+				<h2 className="portal-title">{getTitle()}</h2>
+
+				{/* Role Selection Buttons */}
+				<div className="role-buttons" style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+					{["student", "teacher", "accountant", "admin"].map((r) => (
 						<button
 							key={r}
+							className={`portal-button ${role === r ? "active" : ""}`}
 							onClick={() => setRole(r)}
-							style={{
-								...styles.tab,
-								backgroundColor: role === r ? "#007bff" : "#eee",
-								color: role === r ? "#fff" : "#000"
-							}}
 						>
 							{r.charAt(0).toUpperCase() + r.slice(1)}
 						</button>
 					))}
 				</div>
 
-				<form onSubmit={handleLogin} style={styles.form}>
-					<div style={styles.inputGroup}>
-						<label>Email or Username</label>
-						<input
-							type="text"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							style={styles.input}
-						/>
+				{/* Login Form */}
+				<form>
+					<label className="portal-label">{getRoleLabel()}</label>
+					<input
+						type="text"
+						placeholder={getRolePlaceholder()}
+						className="portal-input"
+					/>
+
+					<label className="portal-label">Password:</label>
+					<input
+						type="password"
+						placeholder="Enter your password"
+						className="portal-input"
+					/>
+
+					<div className="portal-options">
+						<label>
+							<input type="checkbox" className="portal-checkbox" />
+							Remember Me
+						</label>
+						<a href="#" className="portal-forgot">
+							Forgot Password?
+						</a>
 					</div>
 
-					<div style={styles.inputGroup}>
-						<label>Password</label>
-						<input
-							type="password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							style={styles.input}
-						/>
-					</div>
-
-					<button type="submit" style={styles.loginButton}>
-						Login as {role}
+					<button type="submit" className="portal-button">
+						Sign Me In
 					</button>
 				</form>
 			</div>
 		</div>
 	);
-};
-
-// Simple inline styles for demonstration
-const styles = {
-	container: {
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		minHeight: "100vh",
-		backgroundColor: "#f2f2f2"
-	},
-	card: {
-		backgroundColor: "#fff",
-		padding: "30px",
-		borderRadius: "8px",
-		boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-		width: "100%",
-		maxWidth: "400px"
-	},
-	title: {
-		textAlign: "center",
-		marginBottom: "20px"
-	},
-	tabs: {
-		display: "flex",
-		justifyContent: "space-between",
-		marginBottom: "20px"
-	},
-	tab: {
-		flex: 1,
-		margin: "0 5px",
-		padding: "10px",
-		border: "none",
-		cursor: "pointer",
-		borderRadius: "4px"
-	},
-	form: {
-		display: "flex",
-		flexDirection: "column",
-		gap: "15px"
-	},
-	inputGroup: {
-		display: "flex",
-		flexDirection: "column"
-	},
-	input: {
-		padding: "8px",
-		borderRadius: "4px",
-		border: "1px solid #ccc"
-	},
-	loginButton: {
-		padding: "10px",
-		backgroundColor: "#007bff",
-		color: "#fff",
-		border: "none",
-		borderRadius: "4px",
-		cursor: "pointer"
-	}
 };
 
 export default PortalLogin;
