@@ -13,7 +13,7 @@ import { UserRole } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const PortalLogin: React.FC = () => {
-  const { login } = useAuth();
+  const { PortalLogin } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -63,7 +63,7 @@ const PortalLogin: React.FC = () => {
     
     setIsLoading(true);
     try {
-      await login(email, password, activeRole);
+      await PortalLogin(email, password, activeRole);
       toast.success(`Logged in successfully as ${activeRole}`);
       
       // Navigate based on role
