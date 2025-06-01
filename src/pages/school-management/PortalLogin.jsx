@@ -7,7 +7,7 @@ const PortalLogin = () => {
 				<Link to={routes.schoolManagement} className="logo" >
 					<img src="/uibadan.jpeg" alt="Logo" width={"30%"} />
 				</Link>
-				<h2 className="portal-title">Sign in to your account dggd</h2>
+				<h2 className="portal-title">Sign in to your account dggdfdf</h2>
 				<form>
 					<label className="portal-label">Admission Number:</label>
 					<input
