@@ -1,52 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import routes from "../../routes";
 import { useAuth } from "../../context/AuthContext";
 import { toast } from "sonner";
 
 const PortalLogin = () => {
-  const navigate = useNavigate();
-  const { login } = useAuth();
-
   const [role, setRole] = useState("student");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const getDefaultCredentials = (role) => {
-    switch (role) {
-      case "student":
-        return { email: "anas123@gmail.com", password: "123456" };
-      case "teacher":
-        return { email: "teacher@example.com", password: "password" };
-      case "accountant":
-        return { email: "amanbhai234@gmail.com", password: "0987654" };
-      case "admin":
-        return { email: "stgcommunitydt@gmail.com", password: "9876543" };
-      default:
-        return { email: "", password: "" };
-    }
-  };
-
-  useEffect(() => {
-    const creds = getDefaultCredentials(role);
-    setEmail(creds.email);
-    setPassword(creds.password);
-  }, [role]);
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email.trim() || !password.trim()) {
-      toast.error("Please fill in all fields.");
+    if (!email || !password) {
+      toast.error("Please fill in all fields");
       return;
     }
 
     try {
-      await login(email, password, role);
+      await login(email, password, role); // Assuming your login function takes role
       toast.success(`Logged in as ${role}`);
       navigate(`/${role}`);
     } catch (err) {
-      toast.error("Login failed. Check credentials.");
+      toast.error("Login failed");
     }
   };
 
@@ -56,11 +34,10 @@ const PortalLogin = () => {
         <Link to={routes.schoolManagement} className="logo">
           <img src="/uibadan.jpeg" alt="Logo" width={"30%"} />
         </Link>
-
         <h2 className="portal-title">Sign in to your account</h2>
-
         <form onSubmit={handleSubmit}>
-          <label className="portal-label">Select Role:</label>
+          {/* Role selection */}
+          <label className="portal-label">Login As:</label>
           <select
             value={role}
             onChange={(e) => setRole(e.target.value)}
@@ -75,7 +52,7 @@ const PortalLogin = () => {
           <label className="portal-label">Email:</label>
           <input
             type="text"
-            placeholder="Enter your email or username"
+            placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="portal-input"
