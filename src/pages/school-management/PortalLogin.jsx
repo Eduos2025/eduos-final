@@ -1,88 +1,94 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import routes from "../../routes";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { GraduationCap, BookOpen, Landmark, UserRound } from "lucide-react";
+import { toast } from "sonner";
+
+type UserRole = "student" | "teacher" | "accountant" | "admin";
 
 const PortalLogin = () => {
-	const [role, setRole] = useState(null); // null, "student", or "teacher"
+	const navigate = useNavigate();
+	const [role, setRole] = useState<UserRole>("student");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
-	const handleRoleSelect = (selectedRole) => {
-		setRole(selectedRole);
+	// Default credentials for convenience/demo
+	const defaultCredentials = {
+		student: { email: "anas123@gmail.com", password: "123456" },
+		teacher: { email: "teacher@example.com", password: "password" },
+		accountant: { email: "amanbhai234@gmail.com", password: "0987654" },
+		admin: { email: "stgcommunitydt@gmail.com", password: "9876543" }
 	};
 
-	const handleBack = () => {
-		setRole(null);
+	useEffect(() => {
+		const creds = defaultCredentials[role];
+		setEmail(creds.email);
+		setPassword(creds.password);
+	}, [role]);
+
+	const handleLogin = (e: React.FormEvent) => {
+		e.preventDefault();
+		if (!email || !password) {
+			toast.error("Please enter both email and password");
+			return;
+		}
+		// Simulate login
+		toast.success(`Logged in as ${role}`);
+		navigate(`/${role}`);
+	};
+
+	const roleIcon = {
+		student: <GraduationCap className="h-5 w-5" />,
+		teacher: <BookOpen className="h-5 w-5" />,
+		accountant: <Landmark className="h-5 w-5" />,
+		admin: <UserRound className="h-5 w-5" />
 	};
 
 	return (
-		<div className="portal-container">
-			<div className="portal-card">
-				<Link to={routes.schoolManagement} className="logo">
-					<img src="/uibadan.jpeg" alt="Logo" width={"30%"} />
-				</Link>
+		<div className="flex justify-center items-center min-h-screen bg-gray-50 p-4">
+			<div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
+				<h2 className="text-center text-2xl font-semibold mb-6">Login to EDUOS</h2>
+				<Tabs defaultValue="student" onValueChange={(val) => setRole(val as UserRole)}>
+					<TabsList className="grid grid-cols-4 mb-4">
+						{(["student", "teacher", "accountant", "admin"] as UserRole[]).map((r) => (
+							<TabsTrigger key={r} value={r} className="flex flex-col items-center text-xs">
+								{roleIcon[r]}
+								<span className="capitalize mt-1">{r}</span>
+							</TabsTrigger>
+						))}
+					</TabsList>
 
-				{!role ? (
-					<>
-						<h2 className="portal-title">Select Your Role</h2>
-						<div className="role-buttons">
-							<button
-								className="portal-button"
-								onClick={() => handleRoleSelect("student")}
-							>
-								Student
-							</button>
-							<button
-								className="portal-button"
-								onClick={() => handleRoleSelect("teacher")}
-							>
-								Teacher
-							</button>
-						</div>
-					</>
-				) : (
-					<>
-						<h2 className="portal-title">
-							{role === "student" ? "Student Login" : "Teacher Login"}
-						</h2>
-						<form>
-							<label className="portal-label">
-								{role === "student" ? "Admission Number:" : "Staff ID:"}
-							</label>
-							<input
-								type="text"
-								placeholder={
-									role === "student"
-										? "Enter your admission number"
-										: "Enter your staff ID"
-								}
-								className="portal-input"
-							/>
-
-							<label className="portal-label">Password:</label>
-							<input
-								type="password"
-								placeholder="Enter your password"
-								className="portal-input"
-							/>
-
-							<div className="portal-options">
-								<label>
-									<input type="checkbox" className="portal-checkbox" />
-									Remember Me
-								</label>
-								<a href="#" className="portal-forgot">
-									Forgot Password?
-								</a>
+					<TabsContent value={role}>
+						<form onSubmit={handleLogin} className="space-y-4">
+							<div>
+								<Label htmlFor="email">Email or Username</Label>
+								<Input
+									id="email"
+									type="text"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									placeholder="Enter your email or username"
+								/>
 							</div>
-
-							<button type="submit" className="portal-button">
-								Sign Me In
-							</button>
+							<div>
+								<Label htmlFor="password">Password</Label>
+								<Input
+									id="password"
+									type="password"
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
+									placeholder="Enter your password"
+								/>
+							</div>
+							<Button type="submit" className="w-full">
+								Login as {role.charAt(0).toUpperCase() + role.slice(1)}
+							</Button>
 						</form>
-						<button className="portal-back-button" onClick={handleBack}>
-							← Back
-						</button>
-					</>
-				)}
+					</TabsContent>
+				</Tabs>
 			</div>
 		</div>
 	);
