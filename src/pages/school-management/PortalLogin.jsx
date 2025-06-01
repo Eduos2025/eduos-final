@@ -12,7 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { UserRole } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
-const Login: React.FC = () => {
+const PortalLogin: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -359,4 +359,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default PortalLogin;
