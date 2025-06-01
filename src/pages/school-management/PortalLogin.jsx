@@ -3,7 +3,7 @@ import routes from "../../routes";
 const PortalLogin = () => {
 	return (
 		<div className="portal-container">
-			<div className="portal-card">
+			<div className="portal-card"> //gg
 				<Link to={routes.schoolManagement} className="logo" >
 					<img src="/uibadan.jpeg" alt="Logo" width={"30%"} />
 				</Link>
