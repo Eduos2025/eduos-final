@@ -1,72 +1,18 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import routes from "../../routes";
-
 const PortalLogin = () => {
-	const [role, setRole] = useState("student"); // default selected role
-
-	const getRoleLabel = () => {
-		switch (role) {
-			case "student":
-				return "Admission Number:";
-			case "teacher":
-				return "Staff ID:";
-			case "accountant":
-				return "Accountant ID:";
-			case "admin":
-				return "Admin ID:";
-			default:
-				return "User ID:";
-		}
-	};
-
-	const getRolePlaceholder = () => {
-		switch (role) {
-			case "student":
-				return "Enter your admission number";
-			case "teacher":
-				return "Enter your teacher ID";
-			case "accountant":
-				return "Enter your accountant ID";
-			case "admin":
-				return "Enter your admin ID";
-			default:
-				return "Enter your ID";
-		}
-	};
-
-	const getTitle = () => {
-		return `${role.charAt(0).toUpperCase() + role.slice(1)} Login`;
-	};
-
 	return (
 		<div className="portal-container">
 			<div className="portal-card">
-				<Link to={routes.schoolManagement} className="logo">
+				<Link to={routes.schoolManagement} className="logo" >
 					<img src="/uibadan.jpeg" alt="Logo" width={"30%"} />
 				</Link>
-
-				<h2 className="portal-title">{getTitle()}</h2>
-
-				{/* Role Selection Buttons */}
-				<div className="role-buttons" style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
-					{["student", "teacher", "accountant", "admin"].map((r) => (
-						<button
-							key={r}
-							className={`portal-button ${role === r ? "active" : ""}`}
-							onClick={() => setRole(r)}
-						>
-							{r.charAt(0).toUpperCase() + r.slice(1)}
-						</button>
-					))}
-				</div>
-
-				{/* Login Form */}
+				<h2 className="portal-title">Sign in to your account</h2>
 				<form>
-					<label className="portal-label">{getRoleLabel()}</label>
+					<label className="portal-label">Admission Number:</label>
 					<input
 						type="text"
-						placeholder={getRolePlaceholder()}
+						placeholder="Enter your admission number"
 						className="portal-input"
 					/>
 
